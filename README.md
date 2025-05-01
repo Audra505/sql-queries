@@ -4,7 +4,8 @@ Portfolio of SQL queries showcasing data analysis classwork and projects.
 
 ## 📁 Repository Structure
 
-- `/classwork`: SQL queries completed during coursework and practice exercises
+- `/classwork`: SQL business exercises completed during coursework
+- `/projects`: Full SQL projects applying skills to business questions and real-world scenarios
 
 ## 🔍 Included Files
 
