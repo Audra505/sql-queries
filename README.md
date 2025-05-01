@@ -13,4 +13,9 @@ Portfolio of SQL queries showcasing data analysis classwork and projects.
 - `hospitality_business_queries.sql`: SQL queries answering business-related questions using the Hospitality database, demonstrating aggregation functions  and filtering techniques.
 - `mavenmovies_mysql_joins.sql`: SQL queries using various JOIN types (INNER JOIN, LEFT JOIN, etc.) on the Mavenmovies database to answer business questions involving inventory, rental, film, etc.
 
+## 📝 Project Files
+
+- `mavenmovies_mysql_acquisition_project.sql`: SQL project using the MavenMovies database to answer business-driven questions from a potential buyer of a movie rental company. Queries involve multi-table JOINs, aggregation, grouping, filtering, and business insights covering store operations, inventory, customers, financials, and award-winning actors.
+
+
 More files and projects will be added over time as I continue expanding my SQL portfolio!
