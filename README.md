@@ -8,6 +8,6 @@ Portfolio of SQL queries showcasing data analysis classwork and projects.
 
 ## 🔍 Included Files
 
-- `hospitality_sql_basics.sql`: SQL queries using the Hospitality database to demonstrate the "Big 6" elements of SQL SELECT statements and other core SQL elements.
+- `hospitality_sql_basics.sql`: SQL queries using the Hospitality database to demonstrate the "Big 6" elements of SQL SELECT statements and other core SQL elements including CASE statements.
 
 More files and projects will be added over time as I continue expanding my SQL portfolio!
