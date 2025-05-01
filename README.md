@@ -20,4 +20,4 @@ Portfolio of SQL queries showcasing data analysis classwork and projects.
 
 More files and projects will be added over time as I continue expanding my SQL portfolio!
 
-## 📫 Connect with me on [LinkedIn](https://www.linkedin.com/in/adaora-nwogbo-033a51131/)or reach me at adanwogbo@gmail.com
+📫 Connect with me on [LinkedIn](https://www.linkedin.com/in/adaora-nwogbo-033a51131/) or reach me at adanwogbo@gmail.com
