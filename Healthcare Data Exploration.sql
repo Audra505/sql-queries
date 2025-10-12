@@ -30,7 +30,6 @@ ORDER BY No_of_patients DESC;
 SELECT *
 FROM conditions;
 
-
 SELECT description, COUNT(description) AS Occurences
 FROM conditions
 GROUP BY description
@@ -172,7 +171,6 @@ FROM patients;
 SELECT *
 FROM conditions;
 
-
 SELECT 
     p.state,
     COUNT(DISTINCT p.id) AS Chronic_conditions
@@ -182,5 +180,6 @@ JOIN conditions c
 WHERE c.description ILIKE '%chronic%'
 GROUP BY p.state
 ORDER BY Chronic_conditions DESC;
+
 
 -----------------------------------------------------------------
