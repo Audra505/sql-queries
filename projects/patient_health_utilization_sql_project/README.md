@@ -52,9 +52,9 @@ Through this analysis, I explored questions such as:
     - Trimmed whitespace and corrected capitalization using INITCAP().
     - Rounded numerical columns (lat, lon, healthcare_expenses, etc.).
     - Added derived columns:
-       fips (regional proxy derived from ZIP)
-      income (randomized between 30,000–150,000)
-      mrn (unique patient ID using ROW_NUMBER()).
+       - fips (regional proxy derived from ZIP)
+       - income (randomized between 30,000–150,000)
+       - mrn (unique patient ID using ROW_NUMBER()).
 4. Validated record counts, nulls, and duplicates across all tables.
 5. Removed true duplicates using a SELF JOIN method on the encounters table.
 
