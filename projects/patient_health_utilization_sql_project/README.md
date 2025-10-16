@@ -66,3 +66,39 @@ SET
     city = INITCAP(TRIM(city)),
     race = INITCAP(TRIM(race)),
     healthcare_expenses = ROUND(healthcare_expenses::numeric, 2);
+
+```sql
+-- Duplicate Check in the Encounters table
+SELECT patient, description, start, stop, COUNT(patient)
+FROM public.encounters
+GROUP BY patient, description, start, stop
+HAVING COUNT(patient) > 1;
+
+-- Duplicate Found so need to confirm if its a True Duplicate
+SELECT *
+FROM public.encounters
+WHERE patient = 'bab51ea9-2945-4f8a-8015-e430f80a908e'
+  AND description = 'Encounter For Problem'
+  AND start = '2014-05-27 09:39:29'
+  AND stop = '2014-05-27 09:54:29';
+
+-- Previewed Duplicate before DELETING by doing a SELF JOIN to return value 
+SELECT a.*
+FROM encounters a
+JOIN encounters b
+  ON a.patient = b.patient
+  AND a.description = b.description
+  AND a.start = b.start
+  AND a.stop = b.stop
+  AND a.organization = b.organization
+  AND a.ctid < b.ctid;
+
+-- Deleted one of the records after confirming
+DELETE FROM encounters a
+USING encounters b
+WHERE a.ctid < b.ctid
+  AND a.patient = b.patient
+  AND a.description = b.description
+  AND a.start = b.start
+  AND a.stop = b.stop
+  AND a.organization = b.organization;
