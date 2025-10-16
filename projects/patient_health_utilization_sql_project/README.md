@@ -127,7 +127,7 @@ To view the complete data cleaning process, see the full SQL script here: [`Heal
 4. **Investigated chronic conditions** by filtering for long-term diagnoses and ranking by frequency.
 5. **Examined immunization coverage**, identifying the most common vaccines and average patient age at administration.
 6. **Measured racial and geographic health disparities**, comparing average conditions per patient across groups.
-7. **Validated dataset relationships** across all tables using LEFT JOIN integrity checks.
+7. **Validated dataset relationships** across all tables using ```sqlLEFT JOIN``` integrity checks.
 
 ### Population Overview Metrics
 ```sql
@@ -215,6 +215,8 @@ GROUP BY city
 ORDER BY chronic_patients DESC;
 ```
 **Insight:** Cities such as Boston, Springfield, and Worcester record the highest chronic case counts.
+
+To view the complete exploratory analysis process, see the full SQL script here: [`Healthcare Exploratory Analysis.sql`](./Patient%20Health%20Utilization_exploratory_analysis.sql)
 
 ### Key Takeaways
 - SQL can uncover healthcare utilization and prevention trends directly from raw patient data.
