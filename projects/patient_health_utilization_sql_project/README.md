@@ -4,10 +4,10 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Database Structure](#database-structure)
-- [Phase 1:Data Preparation & Cleaning](#phase-1-data-preparation--cleaning)
+- [Phase 1: Data Preparation & Cleaning](#phase-1-data-preparation--cleaning)
 - [Phase 2: Exploratory Data Analysis (EDA)](#phase-2-exploratory-data-analysis-eda)
-- [Key Takeaways](##key-takeaways)
-- [Project Files](##project-files)
+- [Key Takeaways](#key-takeaways)
+- [Project Files](#project-files)
 ---
 
 ## Project Overview 
