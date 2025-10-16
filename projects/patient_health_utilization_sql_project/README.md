@@ -69,13 +69,16 @@ SET
 ```
 
 ### Duplicate Check in Encounters Table
+```sql
 -- Identify potential duplicates
 SELECT patient, description, start, stop, COUNT(patient)
 FROM public.encounters
 GROUP BY patient, description, start, stop
 HAVING COUNT(patient) > 1;
+```
 
 ## Verify True Duplicates
+```sql
 -- Confirm if its a True Duplicate
 SELECT *
 FROM public.encounters
@@ -83,8 +86,10 @@ WHERE patient = 'bab51ea9-2945-4f8a-8015-e430f80a908e'
   AND description = 'Encounter For Problem'
   AND start = '2014-05-27 09:39:29'
   AND stop = '2014-05-27 09:54:29';
+```
 
 ### Self-Join Preview Before Deletion
+```sql
 -- Previewed Duplicate before DELETING by doing a SELF JOIN to return value 
 SELECT a.*
 FROM encounters a
@@ -95,8 +100,10 @@ JOIN encounters b
   AND a.stop = b.stop
   AND a.organization = b.organization
   AND a.ctid < b.ctid;
+```
 
 ### Delete Confirmed Duplicates
+```sql
 -- Deleted one of the records after confirming
 DELETE FROM encounters a
 USING encounters b
@@ -106,3 +113,4 @@ WHERE a.ctid < b.ctid
   AND a.start = b.start
   AND a.stop = b.stop
   AND a.organization = b.organization;
+```
