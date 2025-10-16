@@ -203,7 +203,7 @@ GROUP BY p.race
 HAVING COUNT(DISTINCT p.id) >= 10
 ORDER BY avg_conditions_per_patient DESC;
 ```
-**Insight:** Certain racial groups show higher chronic burden per patient — a useful metric for population health dashboards.
+**Insight:** Certain racial groups show higher chronic burden per patient.
 
 ### Geographic Insights
 ```sql
@@ -214,7 +214,7 @@ WHERE c.description ILIKE '%chronic%'
 GROUP BY city
 ORDER BY chronic_patients DESC;
 ```
-**Insight:** Cities such as Boston, Springfield, and Worcester record the highest chronic case counts.
+**Insight:** Cities such as Boston, Cambridge, and Worcester record the highest chronic case counts.
 
 To view the complete exploratory analysis process, see the full SQL script here: [`Healthcare Exploratory Analysis.sql`](./Patient%20Health%20Utilization_exploratory_analysis.sql)
 
