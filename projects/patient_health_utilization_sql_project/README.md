@@ -77,7 +77,7 @@ GROUP BY patient, description, start, stop
 HAVING COUNT(patient) > 1;
 ```
 
-## Verify True Duplicates
+### Verify True Duplicates
 ```sql
 -- Confirm if its a True Duplicate
 SELECT *
@@ -115,3 +115,120 @@ WHERE a.ctid < b.ctid
   AND a.organization = b.organization;
 ```
 To view the complete data cleaning process, see the full SQL script here: [`Healthcare Data Preparation.sql`](./Patient%20Health%20Utilization_data_preparation_cleaning.sql)
+
+## Phase 1: Exploratory Data Analysis (EDA)
+
+[Back to Table of Contents](#table-of-contents)
+
+### Key Steps
+1. **Defined baseline population metrics** — total patients, encounters, conditions, and immunizations for KPI benchmarking.
+2. **Explored patient demographics** to identify gender, race, and city-level population distributions.
+3. **Analyzed healthcare utilization patterns**, including encounter types and high-frequency patients.
+4. **Investigated chronic conditions** by filtering for long-term diagnoses and ranking by frequency.
+5. **Examined immunization coverage**, identifying the most common vaccines and average patient age at administration.
+6. **Measured racial and geographic health disparities**, comparing average conditions per patient across groups.
+7. **Validated dataset relationships** across all tables using LEFT JOIN integrity checks.
+
+### Population Overview Metrics
+```sql
+SELECT COUNT(id) FROM patients;                -- Total Patients  
+SELECT COUNT(DISTINCT patient) FROM encounters;  -- Active Patients with Encounters  
+SELECT COUNT(DISTINCT patient) FROM conditions;  -- Patients Diagnosed  
+SELECT COUNT(DISTINCT patient) FROM immunizations;  -- Patients Immunized
+```
+**Insight:** Established baseline counts for KPI cards in Power BI.
+
+### Patient Demographics
+```sql
+SELECT gender, COUNT(id) AS total_patients
+FROM patients
+GROUP BY gender
+ORDER BY total_patients DESC;
+```
+**Insight:** Identified population composition by gender and city (Massachusetts cities).
+
+### Encounter Utilization
+```sql
+SELECT encounterclass, COUNT(id) AS total_encounters
+FROM encounters
+GROUP BY encounterclass
+ORDER BY total_encounters DESC;
+```
+**Insight:** Outpatient and emergency encounters dominate utilization patterns.
+
+### Chronic Conditions Explorer
+```sql
+SELECT description, COUNT(description) AS occurrences
+FROM conditions
+WHERE description <> 'Body Mass Index 30+ - Obesity (Finding)'
+  AND description ILIKE '%chronic%'
+GROUP BY description
+ORDER BY occurrences DESC;
+```
+**Insight:** Chronic sinusitis, heart failure, and chronic pain are the most frequent chronic disorders.
+
+### Immunization Trends
+```sql
+WITH vaccine_age AS (
+  SELECT i.description AS vaccine,
+         ROUND(AVG(EXTRACT(YEAR FROM AGE(date, p.birthdate))), 0) AS avg_age
+  FROM immunizations i
+  JOIN patients p ON i.patient = p.id
+  GROUP BY i.description
+)
+SELECT vaccine, avg_age,
+  CASE
+    WHEN avg_age < 1 THEN 'Infants (0–1)'
+    WHEN avg_age BETWEEN 1 AND 4 THEN 'Toddlers (1–4)'
+    WHEN avg_age BETWEEN 5 AND 12 THEN 'Children (5–12)'
+    WHEN avg_age BETWEEN 13 AND 19 THEN 'Teens (13–19)'
+    WHEN avg_age BETWEEN 20 AND 39 THEN 'Adults (20–39)'
+    ELSE 'Older Adults (40+)'
+  END AS age_group
+FROM vaccine_age
+ORDER BY avg_age;
+```
+**Insight:** Early childhood immunizations (Rotavirus, DTaP, MMR) dominate the dataset.
+
+### Racial & Geographic Health Trends
+```sql
+SELECT 
+    p.race,
+    ROUND(COUNT(c.*)::numeric / COUNT(DISTINCT p.id), 0) AS avg_conditions_per_patient,
+    COUNT(DISTINCT p.id) AS num_patients,
+    COUNT(c.*) AS total_conditions
+FROM patients p
+JOIN conditions c ON p.id = c.patient
+GROUP BY p.race
+HAVING COUNT(DISTINCT p.id) >= 10
+ORDER BY avg_conditions_per_patient DESC;
+```
+**Insight:** Certain racial groups show higher chronic burden per patient — a useful metric for population health dashboards.
+
+### Geographic Insights
+```sql
+SELECT city, COUNT(DISTINCT p.id) AS chronic_patients
+FROM patients p
+JOIN conditions c ON p.id = c.patient
+WHERE c.description ILIKE '%chronic%'
+GROUP BY city
+ORDER BY chronic_patients DESC;
+```
+**Insight:** Cities such as Boston, Springfield, and Worcester record the highest chronic case counts.
+
+### Key Takeaways
+- SQL can uncover healthcare utilization and prevention trends directly from raw patient data.
+- Chronic condition tracking reveals how disease burden differs by demographics and geography.
+- Data preparation (standardization, cleaning, derived features) is critical before visualization.
+- These insights form the foundation for a Power BI dashboard showcasing patient utilization trends.
+
+## Project Files
+
+[Back to Table of Contents](#table-of-contents)
+
+| **File**       | **Description**                                                                                           |
+|------------------|-----------------------------------------------------------------------------------------------------------|
+| **Patient Health Utilization_data_preparation_cleaning.sql**     | Full cleaning and transformation script        |
+| **Patient Health Utilization_exploratory_analysis.sql**   | All EDA queries grouped by category                           |
+| **exploration_screenshots/**   | Screenshots of SQL query results.                                   |
+| **README.md**| This documentation and project overview.                                            |
