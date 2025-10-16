@@ -154,7 +154,7 @@ FROM encounters
 GROUP BY encounterclass
 ORDER BY total_encounters DESC;
 ```
-**Insight:** Outpatient and emergency encounters dominate utilization patterns.
+**Insight:** Wellness and Ambulatory encounters dominate utilization patterns.
 
 ### Chronic Conditions Explorer
 ```sql
