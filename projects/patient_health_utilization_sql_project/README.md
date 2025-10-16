@@ -218,7 +218,10 @@ ORDER BY chronic_patients DESC;
 
 To view the complete exploratory analysis process, see the full SQL script here: [`Healthcare Exploratory Analysis.sql`](./Patient%20Health%20Utilization_exploratory_analysis.sql)
 
-### Key Takeaways
+## Key Takeaways
+
+[Back to Table of Contents](#table-of-contents)
+
 - SQL can uncover healthcare utilization and prevention trends directly from raw patient data.
 - Chronic condition tracking reveals how disease burden differs by demographics and geography.
 - Data preparation (standardization, cleaning, derived features) is critical before visualization.
