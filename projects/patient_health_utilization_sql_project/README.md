@@ -67,7 +67,6 @@ SET
     race = INITCAP(TRIM(race)),
     healthcare_expenses = ROUND(healthcare_expenses::numeric, 2);
 
-```sql
 -- Duplicate Check in the Encounters table
 SELECT patient, description, start, stop, COUNT(patient)
 FROM public.encounters
