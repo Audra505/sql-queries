@@ -19,7 +19,7 @@ The objective was to perform **end-to-end SQL analysis** in **PostgreSQL** — f
 
 These insights will be visualized in a **Power BI dashboard** to demonstrate real-world healthcare analytics.  
 
-### Project Goals
+### Project Goals  
 Through this analysis, I explored questions such as:
 - Which demographics experience the most healthcare encounters?
 - What are the most common and chronic health conditions?
