@@ -114,3 +114,4 @@ WHERE a.ctid < b.ctid
   AND a.stop = b.stop
   AND a.organization = b.organization;
 ```
+To view the complete data cleaning process, see the full SQL script here: [`Healthcare Data Preparation.sql`]
