@@ -41,5 +41,30 @@ Through this analysis, I explored questions such as:
 | **immunizations**| Records of vaccines administered with dates and vaccine names.                                            |
 
 ---
+## Phase 1: Data Preparation & Cleaning
 
+[Back to Table of Contents](#table-of-contents)
+
+### Key Steps
+1.Created base tables (patients, encounters, conditions, immunizations) in PostgreSQL.
+
+Imported CSVs using pgAdmin Import Wizard with UTF-8 encoding.
+
+Standardized and cleaned data, including:
+
+Trimmed whitespace and corrected capitalization using INITCAP().
+
+Rounded numerical columns (lat, lon, healthcare_expenses, etc.).
+
+Added derived columns:
+
+fips (regional proxy derived from ZIP)
+
+income (randomized between 30,000–150,000)
+
+mrn (unique patient ID using ROW_NUMBER()).
+
+Validated record counts, nulls, and duplicates across all tables.
+
+Removed true duplicates using a SELF JOIN method on the encounters table.
 
