@@ -66,6 +66,7 @@ SET
     city = INITCAP(TRIM(city)),
     race = INITCAP(TRIM(race)),
     healthcare_expenses = ROUND(healthcare_expenses::numeric, 2);
+```
 
 ### Duplicate Check in Encounters Table
 -- Identify potential duplicates
