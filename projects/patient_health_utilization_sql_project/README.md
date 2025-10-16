@@ -30,4 +30,16 @@ Through this analysis, I explored questions such as:
 ---
 
 ## Database Structure
+
 [Back to Table of Contents](#table-of-contents)
+
+| **Table**       | **Description**                                                                                           |
+|------------------|-----------------------------------------------------------------------------------------------------------|
+| **patients**     | Demographics and personal health details (gender, race, ethnicity, city, birthdate, income, etc.).        |
+| **encounters**   | Patient visit records with encounter type, cost, payer, and organization data.                            |
+| **conditions**   | Diagnoses assigned per patient, including chronic and acute conditions.                                   |
+| **immunizations**| Records of vaccines administered with dates and vaccine names.                                            |
+
+---
+
+
