@@ -58,3 +58,11 @@ Through this analysis, I explored questions such as:
 4. Validated record counts, nulls, and duplicates across all tables.
 5. Removed true duplicates using a SELF JOIN method on the encounters table.
 
+### Example Cleaning Step
+
+```sql
+UPDATE patients
+SET 
+    city = INITCAP(TRIM(city)),
+    race = INITCAP(TRIM(race)),
+    healthcare_expenses = ROUND(healthcare_expenses::numeric, 2);
