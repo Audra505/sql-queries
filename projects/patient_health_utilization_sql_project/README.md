@@ -59,7 +59,7 @@ Through this analysis, I explored questions such as:
 5. Removed true duplicates using a SELF JOIN method on the encounters table.
 
 ### Example Cleaning Step
-
+### Data Standardization
 ```sql
 UPDATE patients
 SET 
@@ -67,13 +67,15 @@ SET
     race = INITCAP(TRIM(race)),
     healthcare_expenses = ROUND(healthcare_expenses::numeric, 2);
 
--- Duplicate Check in the Encounters table
+### Duplicate Check in Encounters Table
+-- Identify potential duplicates
 SELECT patient, description, start, stop, COUNT(patient)
 FROM public.encounters
 GROUP BY patient, description, start, stop
 HAVING COUNT(patient) > 1;
 
--- Duplicate Found so need to confirm if its a True Duplicate
+## Verify True Duplicates
+-- Confirm if its a True Duplicate
 SELECT *
 FROM public.encounters
 WHERE patient = 'bab51ea9-2945-4f8a-8015-e430f80a908e'
@@ -81,6 +83,7 @@ WHERE patient = 'bab51ea9-2945-4f8a-8015-e430f80a908e'
   AND start = '2014-05-27 09:39:29'
   AND stop = '2014-05-27 09:54:29';
 
+### Self-Join Preview Before Deletion
 -- Previewed Duplicate before DELETING by doing a SELF JOIN to return value 
 SELECT a.*
 FROM encounters a
@@ -92,6 +95,7 @@ JOIN encounters b
   AND a.organization = b.organization
   AND a.ctid < b.ctid;
 
+### Delete Confirmed Duplicates
 -- Deleted one of the records after confirming
 DELETE FROM encounters a
 USING encounters b
