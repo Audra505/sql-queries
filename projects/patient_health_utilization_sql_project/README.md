@@ -46,25 +46,15 @@ Through this analysis, I explored questions such as:
 [Back to Table of Contents](#table-of-contents)
 
 ### Key Steps
-1.Created base tables (patients, encounters, conditions, immunizations) in PostgreSQL.
-
-Imported CSVs using pgAdmin Import Wizard with UTF-8 encoding.
-
-Standardized and cleaned data, including:
-
-Trimmed whitespace and corrected capitalization using INITCAP().
-
-Rounded numerical columns (lat, lon, healthcare_expenses, etc.).
-
-Added derived columns:
-
-fips (regional proxy derived from ZIP)
-
-income (randomized between 30,000–150,000)
-
-mrn (unique patient ID using ROW_NUMBER()).
-
-Validated record counts, nulls, and duplicates across all tables.
-
-Removed true duplicates using a SELF JOIN method on the encounters table.
+1. Created base tables (patients, encounters, conditions, immunizations) in PostgreSQL.
+2. Imported CSVs using pgAdmin Import Wizard with UTF-8 encoding.
+3. Standardized and cleaned data, including:
+    - Trimmed whitespace and corrected capitalization using INITCAP().
+    - Rounded numerical columns (lat, lon, healthcare_expenses, etc.).
+    - Added derived columns:
+       fips (regional proxy derived from ZIP)
+      income (randomized between 30,000–150,000)
+      mrn (unique patient ID using ROW_NUMBER()).
+4. Validated record counts, nulls, and duplicates across all tables.
+5. Removed true duplicates using a SELF JOIN method on the encounters table.
 
