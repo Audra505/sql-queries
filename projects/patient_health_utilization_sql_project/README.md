@@ -116,7 +116,7 @@ WHERE a.ctid < b.ctid
 ```
 To view the complete data cleaning process, see the full SQL script here: [`Healthcare Data Preparation.sql`](./Patient%20Health%20Utilization_data_preparation_cleaning.sql)
 
-## Phase 1: Exploratory Data Analysis (EDA)
+## Phase 2: Exploratory Data Analysis (EDA)
 
 [Back to Table of Contents](#table-of-contents)
 
