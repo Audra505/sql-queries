@@ -10,8 +10,10 @@
 - [Project Files](##project-files)
 ---
 
-## Project Overview  
+## Project Overview 
+
 [Back to Table of Contents](#table-of-contents)
+
 This project analyzes **synthetic patient health records** generated using the **Synthea Open Dataset**, a realistic simulation of U.S. healthcare data.  
 The objective was to perform **end-to-end SQL analysis** in **PostgreSQL** — from raw data preparation and cleaning to exploratory queries that uncover trends in **patient demographics, healthcare utilization, chronic conditions, and immunization patterns**.  
 
