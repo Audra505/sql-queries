@@ -145,7 +145,7 @@ FROM patients
 GROUP BY gender
 ORDER BY total_patients DESC;
 ```
-**Insight:** Identified population composition by gender and city (Massachusetts cities).
+**Insight:** Identified population composition by gender.
 
 ### Encounter Utilization
 ```sql
