@@ -127,7 +127,7 @@ To view the complete data cleaning process, see the full SQL script here: [`Heal
 4. **Investigated chronic conditions** by filtering for long-term diagnoses and ranking by frequency.
 5. **Examined immunization coverage**, identifying the most common vaccines and average patient age at administration.
 6. **Measured racial and geographic health disparities**, comparing average conditions per patient across groups.
-7. **Validated dataset relationships** across all tables using ```sqlLEFT JOIN``` integrity checks.
+7. **Validated dataset relationships** across all tables using ```LEFT JOIN``` integrity checks.
 
 ### Population Overview Metrics
 ```sql
@@ -230,7 +230,7 @@ To view the complete exploratory analysis process, see the full SQL script here:
 
 | **File**       | **Description**                                                                                           |
 |------------------|-----------------------------------------------------------------------------------------------------------|
-| **Patient Health Utilization_data_preparation_cleaning.sql**     | Full cleaning and transformation script        |
-| **Patient Health Utilization_exploratory_analysis.sql**   | All EDA queries grouped by category                           |
-| **exploration_screenshots/**   | Screenshots of SQL query results.                                   |
-| **README.md**| This documentation and project overview.                                            |
+| ```Patient Health Utilization_data_preparation_cleaning.sql```     | Full cleaning and transformation script        |
+| ```Patient Health Utilization_exploratory_analysis.sql```  | All EDA queries grouped by category                           |
+| exploration_screenshots/   | Screenshots of SQL query results.                                   |
+| README.md | This documentation and project overview.                                            |
