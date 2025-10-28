@@ -6,7 +6,7 @@
 - [Database Structure](#database-structure)
 - [Phase 1: Data Preparation & Cleaning](#phase-1-data-preparation--cleaning)
 - [Phase 2: Exploratory Data Analysis (EDA)](#phase-2-exploratory-data-analysis-eda)
-- [Public Health Utilization Dashboard](#public-health-utilization-dashboard)
+- [Patient Health Utilization Dashboard](#patient-health-utilization-dashboard)
 - [Key Takeaways](#key-takeaways)
 - [Project Files](#project-files)
 ---
