@@ -14,8 +14,6 @@ The report demonstrates **data storytelling**, **dynamic measures**, and **conte
 - Use the **navigation buttons** to move across visuals to get more insights.
 
 ## Navigate Through the Report to Explore:
-
-**Focus** 
 - **Patient Overview:** Global KPIs and healthcare utilization summary 
 - **Encounter Trends:** Monthly and categorical encounter patterns 
 - **Conditions Explorer:** Top 10 dimensions + Chronic conditions frequency and burden 
