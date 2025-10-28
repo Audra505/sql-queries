@@ -6,6 +6,7 @@
 - [Database Structure](#database-structure)
 - [Phase 1: Data Preparation & Cleaning](#phase-1-data-preparation--cleaning)
 - [Phase 2: Exploratory Data Analysis (EDA)](#phase-2-exploratory-data-analysis-eda)
+- [Public Health Utilization Dashboard](#public-health-utilization-dashboard)
 - [Key Takeaways](#key-takeaways)
 - [Project Files](#project-files)
 ---
@@ -218,6 +219,30 @@ ORDER BY chronic_patients DESC;
 
 To view the complete exploratory analysis process, see the full SQL script here: [`Healthcare Exploratory Analysis.sql`](./Patient%20Health%20Utilization_exploratory_analysis.sql)
 
+
+## Public Health Utilization Dashboard 
+
+[Back to Table of Contents](#table-of-contents)
+
+This Power dashboard visualizes the cleaned and analyzed data from PostgreSQL to uncover patterns in patient, encounters, conditions, and immunizations across Massachusetts.
+
+## Focus & Highlights 
+1. **Patient Overview:** Overall patient base and demographics. Highlights:KPIs for Encounters, Patients, Conditions and Immunization
+2. **Encounter Trends:** Visit frequency and patterns. Highlights: Line & column charts with dynamic tooltips showing monthly changes and % total of encounters by categories
+3. **Conditions & Immunization Explorer:** Conditions and Immunization breakdown. Highlights:Top 10 conditions/immunizations + condition density across cities
+4. **City Insights:** Regional distribution. Highlights: Shape map highlighting urban vs rural case hotspots
+
+## Insights 
+- Ambulatory and Wellness visits dominate encounter volume.
+- Sinusitis and Heart Failure are the most common chronic conditions.
+- Boston and Lynn lead in chronic case density.
+- Seasonal spikes and gender/race variations reveal targeted healthcare demands.
+
+### View the Interactive Dashboard
+[Click to View Published Dashboard on Power BI](https://app.powerbi.com/view?r=eyJrIjoiOTE5ODdiNmItZjY4Mi00ZWY5LWE3MGUtNjE2ZTg4MzYwZTY2IiwidCI6ImY0ZTI5ODFhLWVlMjctNDhkZi05NDM1LWM0NmJiZDRmMWU3ZCJ9)  
+
+---
+
 ## Key Takeaways
 
 [Back to Table of Contents](#table-of-contents)
@@ -235,5 +260,6 @@ To view the complete exploratory analysis process, see the full SQL script here:
 |------------------|-----------------------------------------------------------------------------------------------------------|
 | ```Patient Health Utilization_data_preparation_cleaning.sql```     | Full cleaning and transformation script        |
 | ```Patient Health Utilization_exploratory_analysis.sql```  | All EDA queries grouped by category                           |
+| Patient Health Utilization_Dashboard.pbix                  | Full Power BI dashboard with dynamic tooltips, KPIs and visual analysis
 | exploration_screenshots/   | Screenshots of SQL query results.                                   |
 | README.md | This documentation and project overview.                                            |
