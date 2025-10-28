@@ -220,7 +220,7 @@ ORDER BY chronic_patients DESC;
 To view the complete exploratory analysis process, see the full SQL script here: [`Healthcare Exploratory Analysis.sql`](./Patient%20Health%20Utilization_exploratory_analysis.sql)
 
 
-## Public Health Utilization Dashboard 
+## Patient Health Utilization Dashboard 
 
 [Back to Table of Contents](#table-of-contents)
 
