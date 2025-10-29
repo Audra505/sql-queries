@@ -19,23 +19,21 @@ This repository is designed for:
 
 | Category | Concepts |
 |-----------|-----------|
-| Window Functions | ROW_NUMBER(), RANK(), LEAD(), LAG() |
-| Aggregations | SUM(), COUNT(), AVG(), MAX(), MIN() |
-| Filtering & Sorting | WHERE, HAVING, ORDER BY |
-| Joins & Set Operations | INNER JOIN, LEFT JOIN, UNION ALL |
-| Subqueries & CTEs | WITH statements, nested queries |
-| Date Functions | EXTRACT, DATE_TRUNC, INTERVAL |
-| String Functions | CONCAT, SUBSTRING, INITCAP, LENGTH |
+| Window Functions | ```ROW_NUMBER()```, ```RANK()```, ```LEAD()```, ```LAG()``` |
+| Aggregations | ```SUM()```, ```COUNT()```, ```AVG()```, ```MAX()```, ```MIN()``` |
+| Filtering & Sorting | ```WHERE```, ```HAVING```, ```ORDER BY``` |
+| Joins & Set Operations | ```INNER JOIN```, ```LEFT JOIN```, ```UNION ALL``` |
+| Subqueries & CTEs | ```WITH``` statements, nested queries |
+| Date Functions | ```EXTRACT```, ```DATE_TRUNC```, ```INTERVAL``` |
+| String Functions | ```CONCAT```, ```SUBSTRING```, ```INITCAP```, ```LENGTH``` |
 | Analytical Thinking | Multi-step reasoning through query design |
 
 ## Skills Strengthened
 
-| Area | Description |
-|------|--------------|
-| SQL Programming | PostgreSQL syntax and logical query writing |
-| Data Aggregation | Summarizing and analyzing structured datasets |
-| Analytical Reasoning | Translating problem statements into queries |
-| Query Optimization | Simplifying logic for readability and performance |
+- SQL Programming: PostgreSQL syntax and logical query writing |
+- Data Aggregation: Summarizing and analyzing structured datasets |
+- Analytical Reasoning: Translating problem statements into queries |
+- Query Optimization: Simplifying logic for readability and performance |
 
 
 ## Technical Summary
