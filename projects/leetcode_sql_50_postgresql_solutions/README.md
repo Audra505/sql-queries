@@ -54,7 +54,9 @@ The solution file follows a consistent and well-documented structure for clarity
 
 ```sql
 -- Problem: 001. Recyclable and Low Fat Products
+-- Question: Find the IDs of products that are both low fat ('Y') and recyclable ('Y').
 -- Difficulty: Easy
+-- Platform: LeetCode (https://leetcode.com/problems/recyclable-and-low-fat-products/description/?envType=study-plan-v2&envId=top-sql-50)
 
 -- Logic:
 -- 1. Filter products where both low_fats and recyclable = 'Y'
