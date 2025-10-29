@@ -30,10 +30,10 @@ This repository is designed for:
 
 ## Skills Strengthened
 
-- SQL Programming: PostgreSQL syntax and logical query writing |
-- Data Aggregation: Summarizing and analyzing structured datasets |
-- Analytical Reasoning: Translating problem statements into queries |
-- Query Optimization: Simplifying logic for readability and performance |
+- SQL Programming: PostgreSQL syntax and logical query writing 
+- Data Aggregation: Summarizing and analyzing structured datasets 
+- Analytical Reasoning: Translating problem statements into queries 
+- Query Optimization: Simplifying logic for readability and performance 
 
 
 ## Technical Summary
@@ -48,4 +48,27 @@ This repository is designed for:
 
 ---
 
+## Example Problem Template
 
+The solution file follows a consistent and well-documented structure for clarity and reusability.
+
+```sql
+-- Problem: 001. Recyclable and Low Fat Products
+-- Difficulty: Easy
+
+-- Logic:
+-- 1. Filter products where both low_fats and recyclable = 'Y'
+-- 2. Display product_id in ascending order
+
+SELECT product_id
+FROM Products
+WHERE low_fats = 'Y'
+  AND recyclable = 'Y'
+ORDER BY product_id;
+```
+---
+
+## Acknowledgment
+
+All problems are sourced from the [LeetCode SQL 50 Study Plan](https://leetcode.com/studyplan/top-sql-50/).
+This repository serves as both a learning resource and a public record of growth in SQL problem-solving and data reasoning using PostgreSQL.
