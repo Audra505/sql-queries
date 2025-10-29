@@ -53,13 +53,15 @@ This repository is designed for:
 The solution file follows a consistent and well-documented structure for clarity and reusability.
 
 ```sql
+/* =====================================================
 -- Problem: 001. Recyclable and Low Fat Products
 -- Question: Find the IDs of products that are both low fat ('Y') and recyclable ('Y').
 -- Difficulty: Easy
-
+-----------------------------------------------------
 -- Logic:
 -- 1. Filter products where both low_fats and recyclable = 'Y'
 -- 2. Display product_id in ascending order
+===================================================== */
 
 SELECT product_id
 FROM Products
