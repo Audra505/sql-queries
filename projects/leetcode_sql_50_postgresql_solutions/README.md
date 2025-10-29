@@ -1,10 +1,9 @@
 # LeetCode SQL 50 — PostgreSQL Solutions
 
-A curated collection of 50 essential SQL interview questions from **LeetCode’s Top SQL 50 Study Plan**, solved using **PostgreSQL** with detailed explanations and learning notes.
+A curated collection of 50 essential SQL interview questions from **LeetCode’s Top SQL 50 Study Plan**, solved using **PostgreSQL** with detailed explanations.
 
 This repository documents my step-by-step journey to strengthen SQL fundamentals, analytical reasoning, and data problem-solving skills.
 
----
 
 ## Purpose & Focus
 
@@ -15,7 +14,6 @@ This repository is designed for:
 - Learning PostgreSQL-specific syntax, functions, and techniques  
 - Preparing for Data Analyst, Business Intelligence, and SQL interview questions  
 
----
 
 ## Topics Covered
 
@@ -30,8 +28,6 @@ This repository is designed for:
 | String Functions | CONCAT, SUBSTRING, INITCAP, LENGTH |
 | Analytical Thinking | Multi-step reasoning through query design |
 
----
-
 ## Skills Strengthened
 
 | Area | Description |
@@ -41,7 +37,6 @@ This repository is designed for:
 | Analytical Reasoning | Translating problem statements into queries |
 | Query Optimization | Simplifying logic for readability and performance |
 
----
 
 ## Technical Summary
 
