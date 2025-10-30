@@ -135,3 +135,17 @@ JOIN Product p
 ON s.product_id = p.product_id;
 
 Link to View Answer: (https://leetcode.com/problems/product-sales-analysis-i/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 008. Customer Who Visited but Did Not Make Any Transactions
+-- Question: Write a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
+   Return the result table sorted in any order.          
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Join Sales with Product table on product_id.
+-- 2. Use INNER JOIN because every sale has a matching product.
+-- 3. Select product_name, year, and price for each sale.
+===================================================== */
+
+Link to View Answer: (https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50)
