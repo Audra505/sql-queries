@@ -143,9 +143,17 @@ Link to View Answer: (https://leetcode.com/problems/product-sales-analysis-i/?en
 -- Difficulty: Easy
 -----------------------------------------------------
 -- Logic:
--- 1. Join Sales with Product table on product_id.
--- 2. Use INNER JOIN because every sale has a matching product.
--- 3. Select product_name, year, and price for each sale.
+-- 1. Join Visits with Transactions on visit_id using LEFT JOIN.
+-- 2. Identify rows where transaction_id IS NULL (no purchase made).
+-- 3. Group by customer_id to count how many no-transaction visits each made.
 ===================================================== */
+
+SELECT v.customer_id, 
+       COUNT(v.visit_id) AS count_no_trans
+FROM Visits v
+LEFT JOIN Transactions t
+    ON v.visit_id = t.visit_id
+WHERE t.transaction_id IS NULL
+GROUP BY v.customer_id;
 
 Link to View Answer: (https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50)
