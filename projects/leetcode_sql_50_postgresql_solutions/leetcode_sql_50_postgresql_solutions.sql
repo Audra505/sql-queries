@@ -157,3 +157,35 @@ WHERE t.transaction_id IS NULL
 GROUP BY v.customer_id;
 
 Link to View Answer: (https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 009. Rising Temperature
+-- Question: Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).
+   Return the result table in any order.          
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Compare each day’s temperature with the previous day.
+-- 2. Use a SELF JOIN where the date difference is exactly 1 day.
+-- 3. Keep only rows where today’s temperature is greater than the previous day.
+===================================================== */
+
+SELECT w.id
+FROM Weather w
+JOIN Weather we
+ ON DATEDIFF(w.recordDate, we.recordDate) = 1
+ WHERE w.temperature > we.temperature;
+
+Link to View Answer: (https://leetcode.com/problems/rising-temperature/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 010. Rising Temperature
+-- Question: Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).
+   Return the result table in any order.          
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Compare each day’s temperature with the previous day.
+-- 2. Use a SELF JOIN where the date difference is exactly 1 day.
+-- 3. Keep only rows where today’s temperature is greater than the previous day.
+===================================================== */
