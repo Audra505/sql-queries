@@ -99,11 +99,39 @@ Link to View Answer: (https://leetcode.com/problems/invalid-tweets/description/?
 /* =====================================================
 -- Problem: 006. Replace Employee ID With The Unique Identifier
 -- Question: Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null.
-Return the result table in any order.          
+   Return the result table in any order.          
 -- Difficulty: Easy
 -----------------------------------------------------
 -- Logic:
--- 1. Select tweet_id from the Tweets table.
--- 2. Use LENGTH() to count the number of characters.
--- 3. Filter for invalid tweets that is greater than 15 characters.
+-- 1. Get all employees from the Employees table.
+-- 2. Use LEFT JOIN with EmployeeUNI on matching id.
+-- 3. Select unique_id (nullable) and employee name.
 ===================================================== */
+
+SELECT unique_id, name
+FROM Employees e
+LEFT JOIN EmployeeUNI ei
+    ON e.id = ei.id;
+
+Link to View Answer: (https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 007. Product Sales Analysis I
+-- Question: Write a solution to report the product_name, year, and price for each sale_id in the Sales table.
+   Return the resulting table in any order.          
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Join Sales with Product table on product_id.
+-- 2. Use INNER JOIN because every sale has a matching product.
+-- 3. Select product_name, year, and price for each sale.
+===================================================== */
+
+SELECT p.product_name,
+       s.year,
+       s.price
+FROM Sales s
+JOIN Product p
+ON s.product_id = p.product_id;
+
+Link to View Answer: (https://leetcode.com/problems/product-sales-analysis-i/?envType=study-plan-v2&envId=top-sql-50)
