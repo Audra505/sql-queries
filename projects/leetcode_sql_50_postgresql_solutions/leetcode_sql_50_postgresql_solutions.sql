@@ -79,14 +79,31 @@ ORDER BY id;
 Link to View Answer: (https://leetcode.com/problems/article-views-i/description/?envType=study-plan-v2&envId=top-sql-50)
 
 /* =====================================================
--- Problem: 005. Article Views I
--- Question: Write a solution to find all the authors that viewed at least one of their own articles.
-   Return the result table sorted by id in ascending order.          
+-- Problem: 005. Invalid Tweets
+-- Question: Write a solution to find the IDs of the invalid tweets. (The tweet is invalid if the number of characters used in the content of the tweet is greater than 15).
+   Return the result table in any order.          
 -- Difficulty: Easy
 -----------------------------------------------------
 -- Logic:
--- 1. Select author_id from the Views table.
--- 2. Filter where author_id = viewer_id (same person).
--- 3. Return distinct author IDs (no duplicates).
--- 4. Sort results by id ascending.
+-- 1. Select tweet_id from the Tweets table.
+-- 2. Use LENGTH() to count the number of characters.
+-- 3. Filter for invalid tweets that is greater than 15 characters.
+===================================================== */
+
+SELECT tweet_id
+FROM Tweets
+WHERE LENGTH(content) > 15;
+
+Link to View Answer: (https://leetcode.com/problems/invalid-tweets/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 006. Invalid Tweets
+-- Question: Write a solution to find the IDs of the invalid tweets. (The tweet is invalid if the number of characters used in the content of the tweet is greater than 15).
+   Return the result table in any order.          
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Select tweet_id from the Tweets table.
+-- 2. Use LENGTH() to count the number of characters.
+-- 3. Filter for invalid tweets that is greater than 15 characters.
 ===================================================== */
