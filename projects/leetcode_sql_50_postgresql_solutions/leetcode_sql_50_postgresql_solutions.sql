@@ -97,9 +97,9 @@ WHERE LENGTH(content) > 15;
 Link to View Answer: (https://leetcode.com/problems/invalid-tweets/description/?envType=study-plan-v2&envId=top-sql-50)
 
 /* =====================================================
--- Problem: 006. Invalid Tweets
--- Question: Write a solution to find the IDs of the invalid tweets. (The tweet is invalid if the number of characters used in the content of the tweet is greater than 15).
-   Return the result table in any order.          
+-- Problem: 006. Replace Employee ID With The Unique Identifier
+-- Question: Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null.
+Return the result table in any order.          
 -- Difficulty: Easy
 -----------------------------------------------------
 -- Logic:
