@@ -171,21 +171,61 @@ Link to View Answer: (https://leetcode.com/problems/customer-who-visited-but-did
 ===================================================== */
 
 SELECT w.id
-FROM Weather w
-JOIN Weather we
- ON DATEDIFF(w.recordDate, we.recordDate) = 1
- WHERE w.temperature > we.temperature;
+FROM Weather w1
+JOIN Weather w2
+ ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
+ WHERE w1.temperature > w2.temperature;
 
 Link to View Answer: (https://leetcode.com/problems/rising-temperature/?envType=study-plan-v2&envId=top-sql-50)
 
 /* =====================================================
--- Problem: 010. Rising Temperature
--- Question: Write a solution to find all dates' id with higher temperatures compared to its previous dates (yesterday).
-   Return the result table in any order.          
+-- Problem: 010. Average Time of Process per Machine
+-- Question: Write a solution to find the average time each machine takes to complete a process.
+             (1) The time to complete a process is the 'end' timestamp minus the 'start' timestamp. 
+                 The average time is calculated by the total time to complete every process on the machine divided by the number of processes that were run.
+             (2) The resulting table should have the machine_id along with the average time as processing_time, which should be rounded to 3 decimal places.
+             (3) Return the result table in any order.         
 -- Difficulty: Easy
 -----------------------------------------------------
 -- Logic:
--- 1. Compare each day’s temperature with the previous day.
--- 2. Use a SELF JOIN where the date difference is exactly 1 day.
--- 3. Keep only rows where today’s temperature is greater than the previous day.
+-- 1. Use SELF JOIN to match each process’s 'start' and 'end' rows.
+-- 2. Calculate time difference (end - start) for each process.
+-- 3. Group by machine_id to find the average duration.
+-- 4. Round the result to 3 decimal places.
 ===================================================== */
+
+SELECT 
+    a1.machine_id,
+    ROUND(AVG(a2.timestamp - a1.timestamp), 3) AS processing_time
+FROM Activity a1
+JOIN Activity a2
+  ON a1.machine_id = a2.machine_id
+  AND a1.process_id = a2.process_id
+  AND a1.activity_type = 'start'
+  AND a2.activity_type = 'end'
+  GROUP BY a1.machine_id;
+
+Link to View Answer: (https://leetcode.com/problems/average-time-of-process-per-machine/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 011. Employee Bonus
+-- Question: Write a solution to report the name and bonus amount of each employee with a bonus less than 1000.
+   Return the result table in any order.
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Start with Employee since all employees should appear.
+-- 2. Use LEFT JOIN on Bonus using empId.
+-- 3. Filter for employees whose bonus is less than 1000 
+      OR have no bonus record (bonus IS NULL).
+===================================================== */
+
+SELECT e.name, b.bonus AS bonus
+FROM Employee e
+LEFT JOIN Bonus b
+    ON e.empId = b.empId
+WHERE b.bonus < 1000
+    OR b.bonus IS NULL;
+
+  
+Link to View Answer: (https://leetcode.com/problems/employee-bonus/?envType=study-plan-v2&envId=top-sql-50)
