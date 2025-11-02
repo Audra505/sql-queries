@@ -42,17 +42,22 @@ There are several useful SQL clauses that often accompany `SELECT`. Each clause 
 
 
 ## SELECT DISTINCT
-Removes duplicate rows from the result set. `DISTINCT` ensures that only unique values appear in the output.
+Removes duplicate rows from the result set. `DISTINCT` ensures that only unique (different) values appear in the output.
 
  **Example:**
 ```sql
+-- Syntax
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+--
 SELECT DISTINCT city
 FROM Customers;
 ```
 Returns each city only once, even if multiple customers live there.
 
-**Learn More:** W3Schools – DISTINCT
-
+**Learn More:** [W3Schools – DISTINCT](https://www.w3schools.com/sql/sql_distinct.asp)
+                [Mode SQL - DISTINCT](https://mode.com/sql-tutorial/sql-distinct)
+                
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
 ## WHERE
