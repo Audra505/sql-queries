@@ -1,14 +1,23 @@
-# Overview 
-```SELECT``` statements are used to retrieve data from one or more tables in a database. You can either use the statement to view multiple columns or ALL columns using the wildcard function (*). This statement forms the foundation of almost every SQL query.
+# Topic: SELECT  
+### Category: SQL Fundamentals  
 
-## Why It’s Important:
+> This note is part of my **LeetCode SQL 50 Study Notes**, focusing on the `SELECT` statement and its related clauses.
+
+---
+
+## Overview 
+```SELECT``` statements are used to retrieve data from one or more tables in a database. You can either use the statement to view specific columns or **all columns** using the wildcard `*`. This statement forms the foundation of almost every SQL query.
+
+### Why It’s Important:
 Everything else in SQL (joins, grouping, subqueries, etc.) starts with a SELECT statement. Understanding how to filter, sort, and project data correctly is essential for analysis and reporting.
+
+---
 
 # SELECT Query Structure
 A basic SQL query follows this structure:
 
 ```sql
-SELECT column1, column2, OR SELECT *
+SELECT column1, column2, or SELECT *
 FROM table_name
 WHERE condition
 GROUP BY column
