@@ -73,7 +73,7 @@ Combines multiple filtering conditions. `AND` returns rows where both conditions
 SELECT name, city, grade
 FROM Students
 WHERE grade > 90 AND city = 'LA';
-```sql
+```
 
 Returns students with grades above 90 who live in LA.
 
