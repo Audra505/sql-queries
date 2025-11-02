@@ -40,7 +40,6 @@ There is a logical order that SQL follows when running queries:
 ## Common Clauses Used with SELECT
 There are several useful SQL clauses that often accompany `SELECT`. Each clause helps refine, organize, or limit the data returned from a query.
 
----
 
 ### `SELECT DISTINCT`
 Removes duplicate rows from the result set. `DISTINCT` ensures that only unique values appear in the output.
@@ -53,6 +52,8 @@ FROM Customers;
 Returns each city only once, even if multiple customers live there.
 
 **Learn More:** W3Schools – DISTINCT
+
+--
 
 ### `WHERE`
 Filters rows based on a specified condition. `WHERE` restricts which rows are returned by the query.
@@ -67,6 +68,8 @@ Returns only students older than 18.
 
 **Learn More:** Mode SQL – WHERE Clause
 
+--
+
 ### `AND` / `OR`
 Combines multiple filtering conditions. `AND` returns rows where both conditions are true while `OR` returns rows where at least one condition is true.
 
@@ -79,6 +82,8 @@ WHERE grade > 90 AND city = 'LA';
 Returns students with grades above 90 who live in LA.
 
 **Learn More:** SQLBolt – Multiple Conditions
+
+--
 
 ### `IS NULL`
 Checks for missing (NULL) values. `NULL` represents unknown or missing data. You must use IS NULL or IS NOT NULL — not = or !=.
@@ -93,6 +98,8 @@ Returns employees without a manager.
 
 **Learn More:** W3Schools – IS NULL
 
+--
+
 ### ORDER BY
 Sorts the result set in ascending or descending order. You can specify one or more columns to order by.
 
@@ -105,6 +112,8 @@ ORDER BY salary DESC;
 Returns employees sorted by highest salary first.
 
 **Learn More:** Mode SQL – ORDER BY
+
+--
 
 ### LIMIT
 Restricts the number of rows returned. `LIMIT` is useful for sampling or previewing results.
