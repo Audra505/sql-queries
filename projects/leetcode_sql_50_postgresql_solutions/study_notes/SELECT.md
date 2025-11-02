@@ -13,7 +13,7 @@ Everything else in SQL (joins, grouping, subqueries, etc.) starts with a SELECT 
 
 ---
 
-# SELECT Query Structure
+## SELECT Query Structure
 A basic SQL query follows this structure:
 
 ```sql
@@ -25,22 +25,28 @@ HAVING condition
 ORDER BY column
 LIMIT number;
 ```
-## What Does the Execution Order Look Like When Running A SQL Query?
-There is a logical order that is used as seen below:
-1. FROM (tables joined or selected)
-2. WHERE (filters rows)
-3. GROUP BY (aggregates)
-4. HAVING (filters aggregates)
-5. SELECT (returns columns)
-6. ORDER BY (sorts results)
-7. LIMIT (restricts output rows)
+## SQL Query Execution Order
+There is a logical order that SQL follows when running queries:
+1. **FROM** – Identify tables or joins.
+2. **WHERE** – Filter rows.
+3. **GROUP BY** – Aggregate data.
+4. **HAVING** – Filter aggregates.
+5. **SELECT** – Choose columns.
+6. **ORDER BY** – Sort results.
+7. **LIMIT** – Restrict output rows.
 
-# Statements that Accompany SELECT
-There are different sql statements that can follow after the SELECT Statement like SELECT DISTINCT, WHERE, AND, OR, IS NULL these will be covered with examples to bring more clarity
+## Common Clauses Used with SELECT
+There are several useful SQL clauses that often accompany `SELECT`:
+- SELECT DISTINCT
+- WHERE
+- AND / OR
+- IS NULL
+- ORDER BY
+- LIMIT
 
-# Commom Mistakes To Look Out For 
+## Commom Mistakes to Avoid 
 - Forgetting quotes around strings (e.g., ```WHERE country = 'USA'```).
-- Using = instead of IS with NULL.
+- Using `=` instead of `IS` with `NULL`.
 - Mixing ```AND```/```OR``` without parentheses — it can change logic order.
 
 # Summary Table 
@@ -54,7 +60,12 @@ There are different sql statements that can follow after the SELECT Statement li
 | Sort results | ```ORDER BY``` | ```ORDER BY salary DESC;``` |
 | Limit output | ```LIMIT``` | ```LIMIT 10;```|
 
+## Key Takeaways
+- `SELECT` defines what data to retrieve; `WHERE` defines which rows.
+- Always specify columns instead of `SELECT *` in production queries.
+- Use `DISTINCT` to remove duplicates.
+- Combine filters thoughtfully with `AND`/`OR`.
 
-# For More Information check out these helpful resources:
+## Helpful Resources
 - [W3Schools — SQL SELECT Statement](https://www.w3schools.com/sql/sql_select.asp)
 - [Mode SQL SELECT](https://mode.com/sql-tutorial/sql-select-statement)
