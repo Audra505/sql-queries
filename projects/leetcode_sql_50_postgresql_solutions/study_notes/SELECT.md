@@ -52,9 +52,9 @@ FROM table_name;
 --
 SELECT DISTINCT city
 FROM Customers;
-```
-Returns each city only once, even if multiple customers live there.
 
+-- Returns each city only once, even if multiple customers live there.
+```
 **Learn More:** [W3Schools – DISTINCT](https://www.w3schools.com/sql/sql_distinct.asp)
                 [Mode SQL - DISTINCT](https://mode.com/sql-tutorial/sql-distinct)
                 
@@ -68,9 +68,9 @@ Filters rows based on a specified condition. `WHERE` restricts which rows are re
 SELECT name, age
 FROM Students
 WHERE age > 18;
-```
-Returns only students older than 18.
 
+-- Returns only students older than 18.
+```
 **Learn More:** Mode SQL – WHERE Clause
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
@@ -83,9 +83,9 @@ Combines multiple filtering conditions. `AND` returns rows where both conditions
 SELECT name, city, grade
 FROM Students
 WHERE grade > 90 AND city = 'LA';
-```
-Returns students with grades above 90 who live in LA.
 
+- Returns students with grades above 90 who live in LA.
+```
 **Learn More:** SQLBolt – Multiple Conditions
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
@@ -98,9 +98,9 @@ Checks for missing (NULL) values. `NULL` represents unknown or missing data. You
 SELECT name, department
 FROM Employees
 WHERE manager_id IS NULL;
-```
-Returns employees without a manager.
 
+- Returns employees without a manager.
+```
 **Learn More:** W3Schools – IS NULL
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
@@ -113,9 +113,9 @@ Sorts the result set in ascending or descending order. You can specify one or mo
 SELECT name, salary
 FROM Employees
 ORDER BY salary DESC;
-```
-Returns employees sorted by highest salary first.
 
+- Returns employees sorted by highest salary first.
+```
 **Learn More:** Mode SQL – ORDER BY
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
@@ -128,9 +128,9 @@ Restricts the number of rows returned. `LIMIT` is useful for sampling or preview
 SELECT *
 FROM Orders
 LIMIT 10;
-```
-Returns only the first 10 rows from the Orders table.
 
+- Returns only the first 10 rows from the Orders table.
+```
 **Learn More:** W3Schools – LIMIT
 
 ---
