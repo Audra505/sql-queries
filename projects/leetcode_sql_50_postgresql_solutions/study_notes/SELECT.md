@@ -1,5 +1,4 @@
-# Topic: SELECT  
-### Category: SQL Fundamentals  
+# SQL Fundamentals  
 
 > This note is part of my **LeetCode SQL 50 Study Notes**, focusing on the `SELECT` statement and its related clauses.
 
@@ -25,6 +24,8 @@ HAVING condition
 ORDER BY column
 LIMIT number;
 ```
+--- 
+
 ## SQL Query Execution Order
 There is a logical order that SQL follows when running queries:
 1. **FROM** – Identify tables or joins.
@@ -34,6 +35,7 @@ There is a logical order that SQL follows when running queries:
 5. **SELECT** – Choose columns.
 6. **ORDER BY** – Sort results.
 7. **LIMIT** – Restrict output rows.
+--- 
 
 ## Common Clauses Used with SELECT
 There are several useful SQL clauses that often accompany `SELECT`:
@@ -44,12 +46,16 @@ There are several useful SQL clauses that often accompany `SELECT`:
 - ORDER BY
 - LIMIT
 
+---
+
 ## Commom Mistakes to Avoid 
 - Forgetting quotes around strings (e.g., ```WHERE country = 'USA'```).
 - Using `=` instead of `IS` with `NULL`.
 - Mixing ```AND```/```OR``` without parentheses — it can change logic order.
 
-# Summary Table 
+---
+
+## Summary Table 
 
 | Use Case | Keyword | Example |
 |-----------|-----------|-------|
@@ -59,6 +65,8 @@ There are several useful SQL clauses that often accompany `SELECT`:
 | Remove duplicates | ```DISTINCT``` | ```SELECT DISTINCT city FROM Customers;``` |
 | Sort results | ```ORDER BY``` | ```ORDER BY salary DESC;``` |
 | Limit output | ```LIMIT``` | ```LIMIT 10;```|
+
+---
 
 ## Key Takeaways
 - `SELECT` defines what data to retrieve; `WHERE` defines which rows.
