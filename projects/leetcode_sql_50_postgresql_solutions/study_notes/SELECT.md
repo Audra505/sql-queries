@@ -72,7 +72,6 @@ SELECT column1, column2, ...
 FROM table_name
 WHERE condition;
 --
-
 SELECT name, age
 FROM Students
 WHERE age > 18;
@@ -90,13 +89,22 @@ Combines multiple filtering conditions. `AND` returns rows where both conditions
 
 **Example:**
 ```sql
+-- Syntax for AND (you can replace AND with OR, or do both but use parenthesis to get the correct result)
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+--
 SELECT name, city, grade
 FROM Students
 WHERE grade > 90 AND city = 'LA';
 
 - Returns students with grades above 90 who live in LA.
 ```
-**Learn More:** SQLBolt – Multiple Conditions
+**Learn More:** [W3Schools – AND](https://www.w3schools.com/sql/sql_and.asp)
+                - [W3Schools – OR](https://www.w3schools.com/sql/sql_or.asp)
+                - [Mode SQL – AND Operator](https://mode.com/sql-tutorial/sql-and-operator)
+                - [Mode SQL – OR Operator](https://mode.com/sql-tutorial/sql-or-operator)
+                - [SQLBolt – Multiple Conditions](https://sqlbolt.com/lesson/select_queries_with_constraints)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
