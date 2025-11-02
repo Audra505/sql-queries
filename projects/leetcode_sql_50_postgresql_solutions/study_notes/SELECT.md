@@ -56,24 +56,34 @@ FROM Customers;
 -- Returns each city only once, even if multiple customers live there.
 ```
 **Learn More:** [W3Schools – DISTINCT](https://www.w3schools.com/sql/sql_distinct.asp)
-                [Mode SQL - DISTINCT](https://mode.com/sql-tutorial/sql-distinct)
+                - [Mode SQL - DISTINCT](https://mode.com/sql-tutorial/sql-distinct)
+
                 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
 
 ## WHERE
 Filters rows based on a specified condition. `WHERE` restricts which rows are returned by the query.
 
 **Example:**
 ```sql
+-- Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+--
+
 SELECT name, age
 FROM Students
 WHERE age > 18;
 
 -- Returns only students older than 18.
 ```
-**Learn More:** Mode SQL – WHERE Clause
+**Learn More:** [W3Schools – WHERE](https://www.w3schools.com/sql/sql_where.asp)
+                - [Mode SQL – WHERE Clause](https://mode.com/sql-tutorial/sql-where)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
 
 ## AND / OR
 Combines multiple filtering conditions. `AND` returns rows where both conditions are true while `OR` returns rows where at least one condition is true.
