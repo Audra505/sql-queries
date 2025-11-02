@@ -53,7 +53,7 @@ Returns each city only once, even if multiple customers live there.
 
 **Learn More:** W3Schools – DISTINCT
 
---
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
 ### `WHERE`
 Filters rows based on a specified condition. `WHERE` restricts which rows are returned by the query.
@@ -68,7 +68,7 @@ Returns only students older than 18.
 
 **Learn More:** Mode SQL – WHERE Clause
 
---
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
 ### `AND` / `OR`
 Combines multiple filtering conditions. `AND` returns rows where both conditions are true while `OR` returns rows where at least one condition is true.
@@ -83,7 +83,7 @@ Returns students with grades above 90 who live in LA.
 
 **Learn More:** SQLBolt – Multiple Conditions
 
---
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
 ### `IS NULL`
 Checks for missing (NULL) values. `NULL` represents unknown or missing data. You must use IS NULL or IS NOT NULL — not = or !=.
@@ -98,7 +98,7 @@ Returns employees without a manager.
 
 **Learn More:** W3Schools – IS NULL
 
---
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
 ### ORDER BY
 Sorts the result set in ascending or descending order. You can specify one or more columns to order by.
@@ -113,7 +113,7 @@ Returns employees sorted by highest salary first.
 
 **Learn More:** Mode SQL – ORDER BY
 
---
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
 ### LIMIT
 Restricts the number of rows returned. `LIMIT` is useful for sampling or previewing results.
