@@ -39,12 +39,12 @@ There is a logical order that SQL follows when running queries:
 
 ## Common Clauses Used with SELECT
 There are several useful SQL clauses that often accompany `SELECT`:
-- SELECT DISTINCT
-- WHERE
-- AND / OR
-- IS NULL
-- ORDER BY
-- LIMIT
+- `SELECT DISTINCT`
+- `WHERE`
+- `AND`/`OR`
+- `IS NULL`
+- `ORDER BY`
+- `LIMIT`
 
 ---
 
@@ -73,6 +73,8 @@ There are several useful SQL clauses that often accompany `SELECT`:
 - Always specify columns instead of `SELECT *` in production queries.
 - Use `DISTINCT` to remove duplicates.
 - Combine filters thoughtfully with `AND`/`OR`.
+  
+---
 
 ## Helpful Resources
 - [W3Schools — SQL SELECT Statement](https://www.w3schools.com/sql/sql_select.asp)
