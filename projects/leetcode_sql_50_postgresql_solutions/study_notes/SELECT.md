@@ -41,7 +41,7 @@ There is a logical order that SQL follows when running queries:
 There are several useful SQL clauses that often accompany `SELECT`. Each clause helps refine, organize, or limit the data returned from a query.
 
 
-### `SELECT DISTINCT`
+## `SELECT DISTINCT`
 Removes duplicate rows from the result set. `DISTINCT` ensures that only unique values appear in the output.
 
  **Example:**
@@ -55,7 +55,7 @@ Returns each city only once, even if multiple customers live there.
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
-### `WHERE`
+## `WHERE`
 Filters rows based on a specified condition. `WHERE` restricts which rows are returned by the query.
 
 **Example:**
@@ -70,7 +70,7 @@ Returns only students older than 18.
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
-### `AND` / `OR`
+## `AND` / `OR`
 Combines multiple filtering conditions. `AND` returns rows where both conditions are true while `OR` returns rows where at least one condition is true.
 
 **Example:**
@@ -85,7 +85,7 @@ Returns students with grades above 90 who live in LA.
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
-### `IS NULL`
+## `IS NULL`
 Checks for missing (NULL) values. `NULL` represents unknown or missing data. You must use IS NULL or IS NOT NULL — not = or !=.
 
 **Example:**
@@ -100,7 +100,7 @@ Returns employees without a manager.
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
-### ORDER BY
+## ORDER BY
 Sorts the result set in ascending or descending order. You can specify one or more columns to order by.
 
 **Example:**
@@ -115,7 +115,7 @@ Returns employees sorted by highest salary first.
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
-### LIMIT
+## LIMIT
 Restricts the number of rows returned. `LIMIT` is useful for sampling or previewing results.
 
 **Example:**
@@ -127,8 +127,6 @@ LIMIT 10;
 Returns only the first 10 rows from the Orders table.
 
 **Learn More:** W3Schools – LIMIT
-
----
 
 ## Commom Mistakes to Avoid 
 - Forgetting quotes around strings (e.g., ```WHERE country = 'USA'```).
