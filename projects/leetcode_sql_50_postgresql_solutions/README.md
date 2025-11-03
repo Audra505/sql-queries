@@ -14,6 +14,7 @@ This repository is designed for:
 - Learning PostgreSQL-specific syntax, functions, and techniques  
 - Preparing for Data Analyst, Business Intelligence, and SQL interview questions  
 
+---
 
 ## Topics Covered
 - Window Functions: ```ROW_NUMBER()```, ```RANK()```, ```LEAD()```, ```LAG()``` 
@@ -25,6 +26,8 @@ This repository is designed for:
 - String Functions: ```CONCAT```, ```SUBSTRING```, ```INITCAP```, ```LENGTH``` 
 - Analytical Thinking: Multi-step reasoning through query design 
 
+-- 
+
 ## Skills Strengthened
 
 - SQL Programming: PostgreSQL syntax and logical query writing 
@@ -32,6 +35,7 @@ This repository is designed for:
 - Analytical Reasoning: Translating problem statements into queries 
 - Query Optimization: Simplifying logic for readability and performance 
 
+---
 
 ## Technical Summary
 
