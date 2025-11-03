@@ -26,7 +26,7 @@ This repository is designed for:
 - String Functions: ```CONCAT```, ```SUBSTRING```, ```INITCAP```, ```LENGTH``` 
 - Analytical Thinking: Multi-step reasoning through query design 
 
--- 
+--- 
 
 ## Skills Strengthened
 
