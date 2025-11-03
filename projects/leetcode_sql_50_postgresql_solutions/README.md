@@ -59,7 +59,7 @@ ORDER BY product_id;
 ```
 Link to View Answer: [click here](https://leetcode.com/problems/recyclable-and-low-fat-products/description/?envType=study-plan-v2&envId=top-sql-50)
 
---
+---
 
 # SQL Study Notes — Concept Library
 > This folder serves as a **knowledge companion** to the LeetCode SQL 50 questions. Each file breaks down a major SQL concept covered in the LeetCode study plan, including examples, explanations, and use cases.
