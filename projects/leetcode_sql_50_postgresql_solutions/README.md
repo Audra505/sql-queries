@@ -62,7 +62,7 @@ Link to View Answer: [click here](https://leetcode.com/problems/recyclable-and-l
 ---
 
 # SQL Study Notes — Concept Library
-> This folder serves as a **knowledge companion** to the LeetCode SQL 50 questions. Each file breaks down a major SQL concept covered in the LeetCode study plan, including examples, explanations, and use cases.
+This folder serves as a **knowledge companion** to the LeetCode SQL 50 questions. Each file breaks down a major SQL concept covered in the LeetCode study plan, including examples, explanations, and use cases.
 
 ---
 
