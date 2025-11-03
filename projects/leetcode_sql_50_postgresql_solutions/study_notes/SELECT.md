@@ -109,17 +109,23 @@ WHERE grade > 90 AND city = 'LA';
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
 ## IS NULL
-Checks for missing (NULL) values. `NULL` represents unknown or missing data. You must use IS NULL or IS NOT NULL — not = or !=.
+Checks for missing (NULL) values. `NULL` represents unknown or missing data. You must use IS NULL or IS NOT NULL comparison operators like `=` or `!=` do not work with it.
 
 **Example:**
 ```sql
+-- Syntax (you can replace IS NULL with IS NOT NULL depeding on the condition)
+SELECT column_names
+FROM table_name
+WHERE column_name IS NULL;
+--
 SELECT name, department
 FROM Employees
 WHERE manager_id IS NULL;
 
 - Returns employees without a manager.
 ```
-**Learn More:** W3Schools – IS NULL
+**Learn More:**  [W3Schools – IS NULL](https://www.w3schools.com/sql/sql_null_values.asp)
+                - [Mode SQL – IS NULL](https://mode.com/sql-tutorial/sql-is-null)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
@@ -128,13 +134,19 @@ Sorts the result set in ascending or descending order. You can specify one or mo
 
 **Example:**
 ```sql
+-- Syntax
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+--
 SELECT name, salary
 FROM Employees
 ORDER BY salary DESC;
 
 - Returns employees sorted by highest salary first.
 ```
-**Learn More:** Mode SQL – ORDER BY
+**Learn More:** [W3Schools – ORDER BY](https://www.w3schools.com/sql/sql_orderby.asp)
+                - [Mode SQL – ORDER BY](https://mode.com/sql-tutorial/sql-order-by)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
 
@@ -143,13 +155,20 @@ Restricts the number of rows returned. `LIMIT` is useful for sampling or preview
 
 **Example:**
 ```sql
+-- Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+LIMIT number;
+--
 SELECT *
 FROM Orders
 LIMIT 10;
 
 - Returns only the first 10 rows from the Orders table.
 ```
-**Learn More:** W3Schools – LIMIT
+**Learn More:** [W3Schools – LIMIT](https://www.w3schools.com/sql/sql_top.asp)
+                - [Mode SQL – LIMIT](https://mode.com/sql-tutorial/sql-limit)
 
 ---
 
