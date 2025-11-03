@@ -89,14 +89,13 @@ Link to View Answer: [click here](https://leetcode.com/problems/recyclable-and-l
 | [WINDOW FUNCTIONS](./WINDOW_FUNCTIONS.md) | Ranking, RANK(), ROW_NUMBER(), LAG(), LEAD() |
 | [DATE & STRING FUNCTIONS](./DATE_STRING_FUNCTIONS.md) | Manipulating time and text data |
 
----
-
 **Each topic includes:**
 - Definition & purpose  
 - Example problem  
 - Key takeaways & common mistakes  
 - References for further learning
-  
+---
+
 ## Acknowledgment
 
 All problems are sourced from the [LeetCode SQL 50 Study Plan](https://leetcode.com/studyplan/top-sql-50/).
