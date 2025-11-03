@@ -93,7 +93,8 @@ Combines multiple filtering conditions. `AND` returns rows where both conditions
 SELECT column1, column2, ...
 FROM table_name
 WHERE condition1 AND condition2 AND condition3 ...;
---
+
+-- Example
 SELECT name, city, grade
 FROM Students
 WHERE grade > 90 AND city = 'LA';
@@ -117,7 +118,8 @@ Checks for missing (NULL) values. `NULL` represents unknown or missing data. You
 SELECT column_names
 FROM table_name
 WHERE column_name IS NULL;
---
+
+-- Example
 SELECT name, department
 FROM Employees
 WHERE manager_id IS NULL;
@@ -138,7 +140,8 @@ Sorts the result set in ascending or descending order. You can specify one or mo
 SELECT column1, column2, ...
 FROM table_name
 ORDER BY column1, column2, ... ASC|DESC;
---
+
+-- Example
 SELECT name, salary
 FROM Employees
 ORDER BY salary DESC;
@@ -160,7 +163,8 @@ SELECT column_name(s)
 FROM table_name
 WHERE condition
 LIMIT number;
---
+
+-- Example
 SELECT *
 FROM Orders
 LIMIT 10;
