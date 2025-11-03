@@ -44,12 +44,13 @@ There are several useful SQL clauses that often accompany `SELECT`. Each clause 
 ## SELECT DISTINCT
 Removes duplicate rows from the result set. `DISTINCT` ensures that only unique (different) values appear in the output.
 
- **Example:**
+ **Syntax & Example:**
 ```sql
 -- Syntax
 SELECT DISTINCT column1, column2, ...
 FROM table_name;
---
+
+-- Example
 SELECT DISTINCT city
 FROM Customers;
 
@@ -65,13 +66,14 @@ FROM Customers;
 ## WHERE
 Filters rows based on a specified condition. `WHERE` restricts which rows are returned by the query.
 
-**Example:**
+**Syntax & Example:**
 ```sql
 -- Syntax
 SELECT column1, column2, ...
 FROM table_name
 WHERE condition;
---
+
+-- Example
 SELECT name, age
 FROM Students
 WHERE age > 18;
@@ -87,7 +89,7 @@ WHERE age > 18;
 ## AND / OR
 Combines multiple filtering conditions. `AND` returns rows where both conditions are true while `OR` returns rows where at least one condition is true.
 
-**Example:**
+**Syntax & Example:**
 ```sql
 -- Syntax for AND (you can replace AND with OR, or do both but use parenthesis to get the correct result)
 SELECT column1, column2, ...
@@ -112,7 +114,7 @@ WHERE grade > 90 AND city = 'LA';
 ## IS NULL
 Checks for missing (NULL) values. `NULL` represents unknown or missing data. You must use IS NULL or IS NOT NULL comparison operators like `=` or `!=` do not work with it.
 
-**Example:**
+**Syntax & Example:**
 ```sql
 -- Syntax (you can replace IS NULL with IS NOT NULL depeding on the condition)
 SELECT column_names
@@ -134,7 +136,7 @@ WHERE manager_id IS NULL;
 ## ORDER BY
 Sorts the result set in ascending or descending order. You can specify one or more columns to order by.
 
-**Example:**
+**Syntax & Example:**
 ```sql
 -- Syntax
 SELECT column1, column2, ...
@@ -156,7 +158,7 @@ ORDER BY salary DESC;
 ## LIMIT
 Restricts the number of rows returned. `LIMIT` is useful for sampling or previewing results.
 
-**Example:**
+**Syntax & Example:**
 ```sql
 -- Syntax
 SELECT column_name(s)
