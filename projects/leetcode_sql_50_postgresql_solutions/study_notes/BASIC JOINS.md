@@ -112,3 +112,62 @@ RIGHT JOIN Orders o
                 - [Mode SQL - RIGHT JOIN](https://mode.com/sql-tutorial/sql-right-join)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## FULL OUTER JOIN
+Combines `LEFT` and `RIGHT` joins, it returns all rows when there’s a match in either table.
+
+**Syntax & Example:**
+```sql
+-- Syntax
+SELECT table1.column, table2.column
+FROM table1
+FULL OUTER JOIN table2
+  ON table1.common_column = table2.common_column;
+
+-- Example
+SELECT c.customer_name, o.order_id
+FROM Customers c
+FULL OUTER JOIN Orders o
+  ON c.customer_id = o.customer_id;
+
+-- Returns all cutomers and all orderss, including unmatched ones.
+```
+**Learn More:** [W3Schools – FULL OUTER JOIN](https://www.w3schools.com/sql/sql_join_full.asp)
+                - [Mode SQL - FULL OUTER JOIN](https://mode.com/sql-tutorial/sql-full-outer-join)
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## SELF JOIN
+Joins a table to itself, often used to compare rows or represent hierarchy.
+**Syntax & Example:**
+```sql
+-- Syntax
+SELECT a.column_name, b.column_name
+FROM table_name AS a
+JOIN table_name AS b
+  ON a.common_field = b.common_field;
+
+-- Example
+SELECT e1.name AS employee,
+       e2.name AS manager
+FROM Employee e1
+LEFT JOIN Employee e2
+  ON e1.manager_id = e2.id;
+
+/* Explanation:
+- e1 represents the “employee” version of the table.
+- e2 represents the “manager” version of the same table.
+- The join condition e1.manager_id = e2.id links each employee to their manager.
+- The LEFT JOIN ensures you see all employees even those who don’t have a manager (manager_id IS NULL).*/
+```
+
+**When to Use SELF JOIN**
+- Comparing rows within the same table (e.g., employees vs. managers)
+- Finding parent-child relationships (e.g., hierarchical data)
+- Detecting duplicates or relative comparisons (e.g., employees in the same department earning more than others)
+- Matching patterns within one dataset (e.g., customers who referred other customers)
+
+**Learn More:** [W3Schools – SELF JOIN](https://www.w3schools.com/sql/sql_join_self.asp)
+                - [Mode SQL - SELF JOIN](https://mode.com/sql-tutorial/sql-self-joins)
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
