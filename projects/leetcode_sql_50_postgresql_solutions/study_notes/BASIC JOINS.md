@@ -25,5 +25,5 @@ To analyze sales by customer, you need to join these tables on a shared column l
 | **FULL OUTER JOIN** | Returns all rows when there’s a match in either table (both matched and unmatched values) | All customers and orders, including unmatched ones. |
 | **SELF JOIN** | Joins a table to itself. | Finding employees and their managers within one table. |
 | **CROSS JOIN** | Returns every combination of rows from both tables. | Generate all possible pairings (e.g., colors × sizes). |
-| **UNION** |  | |
-| **UNION ALL** |  | |
+| **UNION** | fill  | fill |
+| **UNION ALL** | fill  | fill |
