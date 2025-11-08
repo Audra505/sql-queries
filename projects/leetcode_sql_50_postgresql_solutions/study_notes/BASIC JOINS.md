@@ -191,7 +191,8 @@ FROM Customers c
 CROSS JOIN Plans p;
 
 /* Explanation:
-Each customer is paired with every plan available if there are 5 customers and 3 plans, the result will have 15 rows (5 × 3) — one for each combination.*/
+Each customer is paired with every plan available if there are 5 customers and 3 plans,
+the result will have 15 rows (5 × 3) — one for each combination.*/
 ```
 
 **When to Use CROSS JOIN**
@@ -222,8 +223,9 @@ UNION
 SELECT customer_name, region
 FROM EU_Customers;
 
-\* Explanation:
-Merges both datasets (`US_Customers` and `EU_Customers`) into one unique list, excluding duplicates (i.e., customers appearing in both regions are shown once).*/
+/* Explanation:
+Merges both datasets (`US_Customers` and `EU_Customers`) into one unique list, excluding duplicates
+(i.e., customers appearing in both regions are shown once).*/
 ```
 
 **When to Use UNION**
@@ -255,8 +257,9 @@ UNION ALL
 SELECT customer_name, region
 FROM EU_Customers;
 
-\* Explanation:
-Combines both datasets and includes all rows, even if the same customer appears in both. If John Doe exists in both regions, he will appear twice in the final result.*/
+/* Explanation:
+Combines both datasets and includes all rows, even if the same customer appears in both.
+If John Doe exists in both regions, he will appear twice in the final result.*/
 ```
 **When to Use UNION ALL**
 - Combining datasets where duplicates have meaning (e.g., multiple purchases, transactions, or repeated survey responses).
