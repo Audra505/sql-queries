@@ -36,6 +36,8 @@ To analyze sales by customer, you need to join these tables on a shared column l
 - `SELF JOIN` is the go-to for comparing rows within the same table.
 - `CROSS JOIN` is rarely used in production but great for data generation or testing.
 
+--- 
+
 ## Breakdown of SQL Joins
 Each join type below includes its SQL definition, syntax pattern, and a real-world example using `Customers` and `Orders` tables refrenced above.
 
@@ -139,6 +141,7 @@ FULL OUTER JOIN Orders o
 
 ## SELF JOIN
 Joins a table to itself, often used to compare rows or represent hierarchy.
+
 **Syntax & Example:**
 ```sql
 -- Syntax
@@ -169,5 +172,98 @@ LEFT JOIN Employee e2
 
 **Learn More:** [W3Schools – SELF JOIN](https://www.w3schools.com/sql/sql_join_self.asp)
                 - [Mode SQL - SELF JOIN](https://mode.com/sql-tutorial/sql-self-joins)
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## CROSS JOIN
+Returns every possible combination of rows from both tables. It is also known as a Cartesian product and doesn’t require a join condition.
+
+**Syntax & Example:**
+```sql
+-- Syntax
+SELECT column_list
+FROM table1
+CROSS JOIN table2;
+
+-- Example
+SELECT c.customer_name, p.plan_name
+FROM Customers c
+CROSS JOIN Plans p;
+
+/* Explanation:
+Each customer is paired with every plan available if there are 5 customers and 3 plans, the result will have 15 rows (5 × 3) — one for each combination.*/
+```
+
+**When to Use CROSS JOIN**
+- Generating all possible combinations between two categories (e.g., colors × sizes, customers × subscription plans).
+- Creating matrix-style datasets for analysis or testing.
+- Exploring pairwise comparisons between all records in two tables.
+
+**Learn More:** [W3Schools – CROSS JOIN](https://www.w3schools.com/mysql/mysql_join_cross.asp)
+                
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## UNION
+Combines the results of two or more `SELECT` queries into a single result set, removing duplicate rows by default. All queries must have the same number of columns, with compatible data types in the same order.
+
+**Syntax & Example:**
+```sql
+-- Syntax
+SELECT column_list
+FROM table1
+UNION
+SELECT column_list
+FROM table2;
+
+-- Example
+SELECT customer_name, region
+FROM US_Customers
+UNION
+SELECT customer_name, region
+FROM EU_Customers;
+
+\* Explanation:
+Merges both datasets (`US_Customers` and `EU_Customers`) into one unique list, excluding duplicates (i.e., customers appearing in both regions are shown once).*/
+```
+
+**When to Use UNION**
+- Merging results from different regions, departments, or time periods.
+- Combining historical and current data where duplicates don’t matter.
+- Creating a clean, distinct dataset from multiple sources.
+
+**Learn More:** [W3Schools – UNION](https://www.w3schools.com/sql/sql_union.asp)
+                - [Mode SQL - UNION](https://mode.com/sql-tutorial/sql-union)
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## UNION ALL
+This works like `UNION`, but it keeps duplicates in the final output. It is faster than UNION since it doesn’t perform duplicate elimination.
+
+**Syntax & Example:**
+```sql
+-- Syntax
+SELECT column_list
+FROM table1
+UNION ALL
+SELECT column_list
+FROM table2;
+
+-- Example
+SELECT customer_name, region
+FROM US_Customers
+UNION ALL
+SELECT customer_name, region
+FROM EU_Customers;
+
+\* Explanation:
+Combines both datasets and includes all rows, even if the same customer appears in both. If John Doe exists in both regions, he will appear twice in the final result.*/
+```
+**When to Use UNION ALL**
+- Combining datasets where duplicates have meaning (e.g., multiple purchases, transactions, or repeated survey responses).
+- Performance optimization when duplicate removal is unnecessary.
+- Auditing or data lineage — when seeing all raw records is important.
+
+**Learn More:** [W3Schools – UNION ALL](https://www.w3schools.com/sql/sql_union_all.asp)
+                - [Mode SQL - UNION ALL](https://mode.com/sql-tutorial/sql-union)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
