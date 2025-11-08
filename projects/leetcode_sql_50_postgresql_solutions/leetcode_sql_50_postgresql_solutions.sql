@@ -110,7 +110,7 @@ Link to View Answer: (https://leetcode.com/problems/invalid-tweets/description/?
    -----------------------------------------------------
    Focus: Merging data across multiple tables using 
           INNER, LEFT, SELF, and CROSS JOINS to uncover relationships
-          and handle unmatched records. Includes use of GROUP BY,
+          and handle unmatched records. Includes use of DATEDIFF, GROUP BY,
           aggregate functions (COUNT, AVG), and conditional logic (CASE, COALESCE, NULLIF)
           for null-safe computations.
    ===================================================== */
