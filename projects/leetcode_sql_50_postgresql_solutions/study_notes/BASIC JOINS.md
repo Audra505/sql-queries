@@ -224,7 +224,7 @@ SELECT customer_name, region
 FROM EU_Customers;
 
 /* Explanation:
-Merges both datasets (`US_Customers` and `EU_Customers`) into one unique list, excluding duplicates
+Merges both datasets (US_Customers and EU_Customers) into one unique list, excluding duplicates
 (i.e., customers appearing in both regions are shown once).*/
 ```
 
@@ -270,3 +270,39 @@ If John Doe exists in both regions, he will appear twice in the final result.*/
                 - [Mode SQL - UNION ALL](https://mode.com/sql-tutorial/sql-union)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## Common Mistakes to Avoid 
+- Forgetting join conditions: This produces duplicate or exploding rows (Cartesian product).
+- Mixing up `LEFT` and `RIGHT`join expectations: can cause missing or unexpected NULL results.
+- Using `WHERE` incorrectly after an outer join: It can eliminate NULL rows. Use conditions inside the ON clause when you want to preserve NULLs.
+- Not aliasing tables: This leads to ambiguity when multiple tables share column names.
+---
+
+## Summary Table
+
+| Join Type | Returns| Example |
+|-----------|-----------|-------|
+| **INNER JOIN**   | Rows with matches in both tables | Customers with orders |
+| **LEFT JOIN**   | All from left + matches from right | All customers, even without orders |
+| **RIGHT JOIN**   | All from right + matches from left |All orders, even without customers  |
+| **FULL OUTER JOIN**   | All records from both sides | All customers and orders |
+| **SELF JOIN**   | Table joined with itself | Employee → Manager |
+| **CROSS JOIN**   | All combinations |Customerx Plan combination |
+| **UNION**   | Combines results of multiple queries, removing duplicates | Merging customers from U.S. and EU regions (unique list) |
+| **UNION ALL**   | Combines results of multiple queries, keeping duplicates  | Combining all transactions from multiple stores (duplicates retained) |
+
+---
+
+## Key Takeaways 
+- Always define your `ON` clause clearly, it determines how tables are related and controls the join logic.
+- `INNER JOIN` filters unmatched data; `LEFT`/`RIGHT` preserve all rows from one side.
+- Avoid using `WHERE` to filter after an outer join unless you intend to remove NULLs (place filters inside the ON clause instead).
+- Always use table aliases (`a`, `b`, etc.) for clarity and to avoid ambiguity in multi-table queries.
+- Use `UNION` vs `UNION ALL` wisely. `UNION` removes duplicates; `UNION ALL` keeps them (and runs faster).
+
+---
+
+## Helpful Resources
+- [W3Schools — SQL Joins](https://www.w3schools.com/sql/sql_join.asp)
+- [Mode SQL — Join Types](https://mode.com/sql-tutorial/sql-joins)
+- [SQLBolt — Visual Joins](https://sqlbolt.com/lesson/select_queries_with_joins)
