@@ -109,9 +109,10 @@ Link to View Answer: (https://leetcode.com/problems/invalid-tweets/description/?
    Topic Covered in Questions: BASIC JOINS
    -----------------------------------------------------
    Focus: Merging data across multiple tables using 
-          INNER, LEFT, SELF, and CROSS JOINS to uncover relationships and handle unmatched records.
-          Includes use of GROUP BY, aggregate functions (COUNT, AVG),
-          and conditional logic (CASE, COALESCE, NULLIF) for null-safe computations.
+          INNER, LEFT, SELF, and CROSS JOINS to uncover relationships
+          and handle unmatched records. Includes use of GROUP BY,
+          aggregate functions (COUNT, AVG), and conditional logic (CASE, COALESCE, NULLIF)
+          for null-safe computations.
    ===================================================== */
 
 /* =====================================================
