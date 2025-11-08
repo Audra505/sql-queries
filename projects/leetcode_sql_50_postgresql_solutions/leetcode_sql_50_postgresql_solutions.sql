@@ -1,4 +1,13 @@
 /* =====================================================
+   Topic Covered in Questions: SELECT STATEMENTS
+   -----------------------------------------------------
+   Focus: Retrieving data, filtering (WHERE), sorting results,
+          handling missing values (IS NULL), using DISTINCT to
+          return unique rows, applying OR conditions, and
+          measuring text length with LENGTH().
+   ===================================================== */
+
+/* =====================================================
 -- Problem: 001. Recyclable and Low Fat Products
 -- Question: Find the IDs of products that are both low fat ('Y') and recyclable ('Y').
 -- Difficulty: Easy
@@ -95,6 +104,15 @@ FROM Tweets
 WHERE LENGTH(content) > 15;
 
 Link to View Answer: (https://leetcode.com/problems/invalid-tweets/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+   Topic Covered in Questions: BASIC JOINS
+   -----------------------------------------------------
+   Focus: Merging data across multiple tables using 
+          INNER, LEFT, SELF, and CROSS JOINS to uncover relationships and handle unmatched records.
+          Includes use of GROUP BY, aggregate functions (COUNT, AVG),
+          and conditional logic (CASE, COALESCE, NULLIF) for null-safe computations.
+   ===================================================== */
 
 /* =====================================================
 -- Problem: 006. Replace Employee ID With The Unique Identifier
@@ -256,3 +274,59 @@ GROUP BY s.student_id, s.student_name, su.subject_name
 ORDER BY s.student_id, su.subject_name;
 
 Link to View Answer: (https://leetcode.com/problems/students-and-examinations/?envType=study-plan-v2&envId=top-sql-50)
+
+/* ============================================================
+-- Problem: 013. Managers with at Least 5 Direct Reports
+-- Question: Write a solution to find managers with at least five direct reports.
+   Return the result table in any order.
+-- Difficulty: Medium
+--------------------------------------------------------------
+-- Logic:
+--   1. SELF JOIN the Employee table to connect each employee (e2) with their manager (e1).
+--   2. Group by manager (e1.id) to count how many employees each manager supervises.
+--   3. Use HAVING to keep only managers with 5 or more direct reports.
+--   4. Select only the manager’s name for the final output.
+==============================================================*/
+
+SELECT 
+    e1.name
+FROM Employee e1
+JOIN Employee e2
+    ON e1.id = e2.managerId
+GROUP BY e1.id, e1.name
+HAVING COUNT(e2.id) >= 5;
+
+Link to View Answer: (https://leetcode.com/problems/managers-with-at-least-5-direct-reports/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* ============================================================
+-- Problem: 014. Confirmation Rate
+-- Question: Write a solution to find the confirmation rate of each user.
+   Return the result table in any order.
+-- Difficulty: Medium
+--------------------------------------------------------------
+-- Logic:
+--  1. Use LEFT JOIN to ensure all users from Signups appear, even if they have no confirmations.
+--  2. Use CASE WHEN inside SUM() to count:
+        - confirmed actions
+        - total confirmation attempts (confirmed + timeout)
+--  3. Use NULLIF() to prevent division by zero.
+--  4. Use COALESCE() to replace NULL with 0 for users with no confirmation records.
+--  5. Round the confirmation rate to 2 decimal places.
+   ================================================ */
+
+SELECT 
+    s.user_id,
+    ROUND(
+        COALESCE(
+            SUM(CASE WHEN c.action = 'confirmed' THEN 1 ELSE 0 END) * 1.0 /
+            NULLIF(SUM(CASE WHEN c.action IN ('confirmed', 'timeout') THEN 1 ELSE 0 END), 0),
+            0
+        ),
+        2
+    ) AS confirmation_rate
+FROM Signups s
+LEFT JOIN Confirmations c
+    ON s.user_id = c.user_id
+GROUP BY s.user_id;
+
+Link to View Answer: (https://leetcode.com/problems/confirmation-rate/description/?envType=study-plan-v2&envId=top-sql-50)
