@@ -240,6 +240,21 @@ GROUP BY department;
 
 ---
 
+## Summary Table
+
+| Function | Description | Example |
+|-----------|-----------|-------|
+| **COUNT()**   |Returns the number of rows in the table (use COUNT(column) to exclude NULLs). | `SELECT COUNT(*) FROM Orders;`|
+| **SUM()**   | Calculates the total of a numeric column such as sales, revenue, or quantity. | `SELECT SUM(amount) FROM Sales;` |
+| **AVG()**   | Returns the mean of a numeric column (ignores NULLs by default). | `SELECT AVG(salary) FROM Employees;`  |
+| **MIN()**   | Identifies the minimum or earliest value in a column. | `SELECT MIN(price) FROM Products;` |
+| **MAX()**   | Identifies the maximum or latest value in a column. | `SELECT MAX(price) FROM Products;` |
+| **GROUP BY**   | Segments data by category before applying an aggregate function. | `GROUP BY department` |
+| **HAVING**   | Used to filter aggregated results (post-GROUP BY). | `HAVING COUNT(id) > 5` |
+| **ROUND()**   | Rounds decimal outputs to a specified number of places. | `ROUND(AVG(price), 2)`  |
+
+---
+
 ## Key Takeaways
 - Aggregate functions summarize large datasets into key insights (categorize data).
 - Always use `GROUP BY` when combining aggregate and non-aggregate columns.
