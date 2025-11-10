@@ -244,8 +244,7 @@ GROUP BY department;
 
 | Function | Description | Example |
 |-----------|-----------|-------|
-| **COUNT()**   |Returns the number of rows in the table (use COUNT(column) to exclude NULLs). | `SELECT COUNT(*) 
-FROM Orders;`|
+| **COUNT()**   |Returns the number of rows in the table (use COUNT(column) to exclude NULLs). | `SELECT COUNT(*) FROM Orders;`|
 | **SUM()**   | Calculates the total of a numeric column such as sales, revenue, or quantity. | `SELECT SUM(amount) FROM Sales;` |
 | **AVG()**   | Returns the mean of a numeric column (ignores NULLs by default). | `SELECT AVG(salary) FROM Employees;`  |
 | **MIN()**   | Identifies the minimum or earliest value in a column. | `SELECT MIN(price) FROM Products;` |
