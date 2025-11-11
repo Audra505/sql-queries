@@ -69,9 +69,9 @@ This folder serves as a **knowledge companion** to the LeetCode SQL 50 questions
 ## Table of Contents
 | Topic | Description |
 |--------|--------------|
-| [SELECT](./SELECT.md) | Query basics, filtering, conditions, DISTINCT, ORDER BY |
-| [BASIC JOINS](./BASIC_JOINS.md) | Combining tables, relationship logic, and matching keys |
-| [AGGREGATION](./AGGREGATION.md) | COUNT, SUM, AVG, GROUP BY, HAVING |
+| [SELECT](SELECT.md) | Query basics, filtering, conditions, DISTINCT, ORDER BY |
+| [BASIC JOINS](BASIC_JOINS.md) | Combining tables, relationship logic, and matching keys |
+| [AGGREGATE FUNCTIONS](AGGREGATE_FUNCTIONS.md) | COUNT, SUM, AVG, GROUP BY, HAVING |
 | [SUBQUERIES](./SUBQUERIES.md) | Nested queries, logical filtering and CTEs |
 | [WINDOW FUNCTIONS](./WINDOW_FUNCTIONS.md) | Ranking, RANK(), ROW_NUMBER(), LAG(), LEAD() |
 | [DATE & STRING FUNCTIONS](./DATE_STRING_FUNCTIONS.md) | Manipulating time and text data |
