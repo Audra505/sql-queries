@@ -331,3 +331,83 @@ LEFT JOIN Confirmations c
 GROUP BY s.user_id;
 
 Link to View Answer: (https://leetcode.com/problems/confirmation-rate/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 015. Not Boring Movies
+-- Question: Write a solution to report the movies with an odd-numbered ID and a description that is not "boring".
+   Return the result table ordered by rating in descending order.
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Use the modulus operator (%) to find movies with odd IDs (id % 2 != 0).
+-- 2. Filter out rows where description does not = 'boring'.
+-- 3. Sort results by rating in descending order.
+===================================================== */
+
+SELECT 
+    id, 
+    movie, 
+    description, 
+    rating
+FROM Cinema
+WHERE id % 2 != 0                
+  AND description != 'boring'    
+ORDER BY rating DESC;           
+
+Link to View Answer: (https://leetcode.com/problems/not-boring-movies/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 016. Average Selling Price
+-- Question: Write a solution to find the average selling price for each product.
+             (1) The average_price should be rounded to 2 decimal places.
+             (2) If a product has no sold units, its average price is assumed to be 0.
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Start from the Prices table because we want all products listed, even unsold ones.
+-- 2. Use LEFT JOIN with UnitsSold to include all matching sold records.
+-- 3. Match only valid price periods using the BETWEEN condition:
+        u.purchase_date BETWEEN p.start_date AND p.end_date
+-- 4. Find total revenue, which is SUM(p.price * u.units)
+-- 5. Find total quantity sold, which is SUM(u.units)
+-- 6. Divide revenue by units to get the weighted average.
+-- 7. Use COALESCE() to handle NULL (unsold products) and ROUND() to 2 decimals.
+===================================================== */
+
+SELECT 
+    p.product_id,
+    ROUND(
+        COALESCE(SUM(p.price * u.units) / SUM(u.units), 0),
+        2
+    ) AS average_price
+FROM Prices p
+LEFT JOIN UnitsSold u
+    ON p.product_id = u.product_id
+   AND u.purchase_date BETWEEN p.start_date AND p.end_date
+GROUP BY p.product_id;
+
+Link to View Answer: (https://leetcode.com/problems/average-selling-price/description/?envType=study-plan-v2&envId=top-sql-50)
+   
+/* =====================================================
+-- Problem: 017. Project Employees I
+-- Question: Write an SQL query that reports the average experience years of all the employees for each project, rounded to 2 digits.
+   Return the result table in any order.
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Each project lists which employees are assigned to it.
+-- 2. INNER JOIN Project with Employee on employee_id to get experience_years.
+-- 3. Group by project_id because we need one result per project.
+-- 4. Use AVG() to find the mean experience.
+-- 5. Use ROUND() to round the result to 2 decimals.
+===================================================== */
+
+SELECT 
+    p.project_id,
+    ROUND(AVG(e.experience_years), 2) AS average_years
+FROM Project p
+JOIN Employee e
+  ON p.employee_id = e.employee_id
+GROUP BY p.project_id;
+
+Link to View Answer: (https://leetcode.com/problems/project-employees-i/description/?envType=study-plan-v2&envId=top-sql-50)
