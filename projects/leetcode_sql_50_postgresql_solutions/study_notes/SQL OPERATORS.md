@@ -79,7 +79,7 @@ So % 2 is the quickest way to check whether a number divides evenly by 2.
 | Sampling data | Take every 10th record. | `id % 10 = 0`  |
 | Rotation logic  | Rotate quarterly (Jan–Mar–Jun–Sep pattern). | `month_id % 4`  |
 
-**Learn More:** [w3resource – Arithmetic Operators](https://www.w3resource.com/sql/arithmetic-operators/sql-arithmetic-operators.php)
+**Learn More:** [W3resource – Arithmetic Operators](https://www.w3resource.com/sql/arithmetic-operators/sql-arithmetic-operators.php)
                 - [GeekforGeeks - Arithmetic Operators](https://www.geeksforgeeks.org/sql/sql-arithmetic-operators/)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
@@ -138,7 +138,7 @@ WHERE price >= 50 AND price <= 100;
 - Works with numbers, dates, and text (alphabetical ranges).
 - For string comparisons they use alphabetical order, not numeric logic.
 
-**Learn More:** [w3resource – Comparison Operators](https://www.w3resource.com/sql/comparison-operators/sql-comparison-operators.php)
+**Learn More:** [W3resource – Comparison Operators](https://www.w3resource.com/sql/comparison-operators/sql-comparison-operators.php)
                 - [Mode SQL - Comparison Operators](https://mode.com/sql-tutorial/sql-operators)
                 - [W3Schools – BETWEEN](https://www.w3schools.com/sql/sql_between.asp)
 
@@ -188,7 +188,7 @@ WHERE (department = 'Sales' OR department = 'Finance')
 **Notation**
 Always use parentheses `()` to make logic clear and avoid confusion especially in complex `WHERE` clauses.
 
-**Learn More:** [w3resource – Logical Operators](https://www.w3resource.com/sql/boolean-operator/sql-boolean-operators.php)
+**Learn More:** [W3resource – Logical Operators](https://www.w3resource.com/sql/boolean-operator/sql-boolean-operators.php)
                 - [Mode SQL - Logical Operators](https://mode.com/sql-tutorial/sql-logical-operators)
                 - [W3Schools – IN](https://www.w3schools.com/sql/sql_in.asp)
 
@@ -236,3 +236,132 @@ Useful for partial matches, flexible filtering, and searching unstructured text.
                 - [W3Schools – Wildcards](https://www.w3schools.com/sql/sql_wildcards.asp)
 
 <hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## NULL Operators
+Handle missing or undefined values.
+
+| Operator| Description | Example |
+|-----------|-----------|-------|
+| `IS NULL`   | Checks if a value is NULL. | `manager_id IS NULL` |
+| `IS NOT NULL`   | Checks if a value exists. | `bonus IS NOT NULL` |
+| `COALESCE()` | Replaces NULL with a default value. | `COALESCE(bonus, 0)`  |
+| `NULLIF()`  | Returns NULL if a = b (else returns a). | `NULLIF(a, b)`  |
+
+**COALESCE() Syntax & Example:**
+```sql
+-- Syntax
+COALESCE(value1, value2, value3, ...)
+
+/*Explanation:
+Returns the first non-NULL value in the list.
+If all values are NULL, it returns NULL.
+Commonly used to replace NULL with a default value for display or calculation.*/
+
+-- Example
+SELECT 
+    name,
+    COALESCE(bonus, 0) AS adjusted_bonus
+FROM Employees;
+
+-- If bonus is NULL, it will display 0 instead, ensuring totals or averages don’t break due to missing data.
+   (Give me the first thing that’s not missing.)
+```
+
+**NULLIF() Syntax & Example:**
+```sql
+-- Syntax
+NULLIF(expression1, expression2)
+
+/*Explanation:
+Compares two expressions.
+Returns NULL if they are equal.
+If not equal, returns the first expression.
+Often used to prevent division by zero or handle special-case comparisons.*/
+
+-- Example
+SELECT 
+    revenue / NULLIF(units_sold, 0) AS avg_price
+FROM Sales;
+
+-- If units_sold = 0, then NULLIF(0, 0) returns NULL, avoiding a division error. If units_sold = 10, then the expression behaves normally.
+   (Return NULL instead of crashing when values are equal.)
+```
+
+**Learn More:** [GeekforGeeks - COALESCE](https://www.geeksforgeeks.org/sql/use-of-coalesce-function-in-sql-server/)
+               - [W3Schools – NULLIF](https://www.w3schools.com/sql/func_sqlserver_nullif.asp)
+
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## Conditional Expressions: CASE WHEN THEN ELSE END
+The `CASE` statement in SQL allows you to perform conditional logic directly inside your queries. It functions similarly to an IF–ELSE structure in programming evaluating conditions in order and returning specific values depending on which one is true.
+
+**Syntax & Example:**
+```sql
+-- Syntax
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ...
+    ELSE resultN
+END
+
+-- Example
+SELECT 
+    product_name,
+    CASE
+        WHEN price > 100 THEN 'High'
+        WHEN price BETWEEN 50 AND 100 THEN 'Medium'
+        ELSE 'Low'
+    END AS price_category
+FROM Products;
+
+/* Explanation:
+Categorizes products based on price range.
+Each row is evaluated in order; the first true condition determines the returned label.
+The ELSE clause is optional if it is omitted and no condition matches, SQL returns NULL.*/
+```
+
+**When to Use:**
+- To label or bucket data into categories (e.g., high vs. low performers, risk levels, etc.).
+- To replace IF logic for inline evaluations.
+- To simplify reporting logic without needing multiple queries.
+
+**Learn More:** [W3Schools – CASE Statement](https://www.w3schools.com/sql/sql_case.asp)
+               - [Mode SQL – CASE](https://mode.com/sql-tutorial/sql-case)
+
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## Common Mistakes to Avoid
+- Using `=` to compare with `NULL`. Use `IS NULL` instead.
+- Forgetting parentheses in `AND`/`OR` combinations this change logic order.
+- Mixing string and numeric comparisons. Ensure your data types are consistent.
+- Expecting `NULL !=` value to return TRUE. Any comparison with `NULL` returns NULL (unknown).
+
+---
+
+## Summary Table
+
+| Category        | Operator / Function                         | Use Case                                   |
+|-----------------|---------------------------------------------|--------------------------------------------|
+| **Arithmetic**  | `+`, `-`, `*`, `/`, `%` | Perform math calculations on numeric data. |
+| **Comparison**  | `=`, `!=`, `>`, `<`, `>=`, `<=`   | Compare values in conditions.    |
+| **Logical**     | `AND`, `OR`, `NOT`, `BETWEEN`, `IN` | Combine and filter conditions. |
+| **String**      | `LIKE`, `||`, `CONCAT()` | Match or combine text strings. |
+| **NULL Handling** | `IS NULL`, `IS NOT NULL`, `COALESCE()`, `NULLIF()`  | Manage missing or undefined values. |
+
+---
+
+## Key Takeaways
+- Operators are the decision-makers in SQL they control filtering, logic, and expression building.
+- Use parentheses to maintain correct logic order in combined conditions.
+- Use `COALESCE()` and `NULLIF()` to handle NULL values safely.
+- `%` (modulus) is great for even/odd checks or numeric grouping.
+- SQL syntax varies slightly across databases for example, PostgreSQL uses `||` for concatenation, while MySQL uses `CONCAT()`.
+
+---
+
+## Helpful Resources
+- [W3Schools – SQL Operators](https://www.w3schools.com/sql/sql_operators.asp)
+- [GeekforGeeks - SQL Operators](https://www.geeksforgeeks.org/sql/sql-operators/)
