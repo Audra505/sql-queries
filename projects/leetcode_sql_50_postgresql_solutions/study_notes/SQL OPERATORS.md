@@ -263,7 +263,8 @@ SELECT
     COALESCE(bonus, 0) AS adjusted_bonus
 FROM Employees;
 
--- If bonus is NULL, it will display 0 instead, ensuring totals or averages don’t break due to missing data.(Give me the first thing that’s not missing.)
+-- If bonus is NULL, it will display 0 instead, ensuring totals or averages don’t break due to missing data.
+-- (Give me the first thing that’s not missing.)
 ```
 
 **NULLIF() Syntax & Example:**
@@ -283,7 +284,8 @@ SELECT
 FROM Sales;
 
 -- If units_sold = 0, then NULLIF(0, 0) returns NULL, avoiding a division error.
--- If units_sold = 10, then the expression behaves normally.(Return NULL instead of crashing when values are equal.)
+-- If units_sold = 10, then the expression behaves normally.
+-- (Return NULL instead of crashing when values are equal.)
 ```
 
 **Learn More:** [GeekforGeeks - COALESCE](https://www.geeksforgeeks.org/sql/use-of-coalesce-function-in-sql-server/)
