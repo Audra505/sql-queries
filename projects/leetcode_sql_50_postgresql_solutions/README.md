@@ -69,12 +69,13 @@ This folder serves as a **knowledge companion** to the LeetCode SQL 50 questions
 ## Table of Contents
 | Topic | Description |
 |--------|--------------|
-| [SELECT](SELECT.md) | Query basics, filtering, conditions, DISTINCT, ORDER BY |
-| [BASIC JOINS](BASIC_JOINS.md) | Combining tables, relationship logic, and matching keys |
-| [AGGREGATE FUNCTIONS](AGGREGATE_FUNCTIONS.md) | COUNT, SUM, AVG, GROUP BY, HAVING |
-| [SUBQUERIES](./SUBQUERIES.md) | Nested queries, logical filtering and CTEs |
-| [WINDOW FUNCTIONS](./WINDOW_FUNCTIONS.md) | Ranking, RANK(), ROW_NUMBER(), LAG(), LEAD() |
-| [DATE & STRING FUNCTIONS](./DATE_STRING_FUNCTIONS.md) | Manipulating time and text data |
+| [SELECT](./study_notes/SELECT.md) | Query basics, filtering, conditions, DISTINCT, ORDER BY |
+| [BASIC JOINS](./study_notes/BASIC_JOINS.md) | Combining tables, relationship logic, and matching keys |
+| [AGGREGATE FUNCTIONS](./study_notes/AGGREGATE_FUNCTIONS.md) | COUNT, SUM, AVG, GROUP BY, HAVING |
+| [SQL OPERATORS](./study_notes/SQL_OPERATORS.md) | Arithmetic, Comparison, Logical, String, and NULL operators |
+| [SUBQUERIES](./study_notes/SUBQUERIES.md) | Nested queries, logical filtering and CTEs |
+| [WINDOW FUNCTIONS](./study_notes/WINDOW_FUNCTIONS.md) | Ranking, RANK(), ROW_NUMBER(), LAG(), LEAD() |
+| [DATE & STRING FUNCTIONS](./study_notes/DATE_STRING_FUNCTIONS.md) | Manipulating time and text data |
 
 **Each topic includes:**
 - Definition & purpose  
