@@ -43,9 +43,9 @@ Used to perform numeric calculations.
 | `-`   | Subtracts one number from another. | `price - discount` |
 | `*` | Multiplies numbers. | `quantity * price`  |
 | `/`  | Divides numbers (watch for 0). | `total / count`  |
-|  `%`   | Returns remainder useful for odd/even checks. | `id % 2 != 0` |
+|  `%`   | Modulo (remainder): Returns remainder useful for odd/even checks. | `id % 2 != 0` |
 
-### Operator Spotlight: Modulus (`%`)
+## Operator Spotlight: Modulus (`%`)
 Returns the remainder after one number is divided by another. It’s especially useful for identifying even and odd numbers, detecting patterns, or working with cyclical data (like every 7th day, every 5th record, etc.).
 
 **Syntax & Example:**
@@ -94,7 +94,7 @@ Used inside `WHERE` and `JOIN` clauses to compare values.
 | `>` / `<` | Greater than / Less than. | `salary > 50000`  |
 | `>=` / `<=`  | Greater than or equal / Less than or equal. | `hire_date >= '2022-01-01'`  |
 
-### Operator Spotlight: `= vs IS (NULL)`
+## Operator Spotlight: `= vs IS (NULL)`
 `NUL`L represents an unknown or missing value, not zero or empty text. Because `NULL` is unknown, any comparison (`=`, `!=`, `>`, etc.) involving `NULL` always returns NULL (unknown) not TRUE or FALSE.
 
 **Incorrect Syntax & Example:**
@@ -118,7 +118,7 @@ WHERE manager_id IS NULL;
 Use IS NULL and IS NOT NULL to test for missing values
 Use = or != for actual comparisons (non-nullable data) */
 ```
-### Operator Spotlight: BETWEEN (Inclusive Ranges)
+## Operator Spotlight: BETWEEN (Inclusive Ranges)
 Returns filters data within a range, including both the lower and upper limits.
 
 **Syntax & Example:**
@@ -140,3 +140,99 @@ WHERE price >= 50 AND price <= 100;
 
 **Learn More:** [w3resource – Comparison Operators](https://www.w3resource.com/sql/comparison-operators/sql-comparison-operators.php)
                 - [Mode SQL - Comparison Operators](https://mode.com/sql-tutorial/sql-operators)
+                - [W3Schools – BETWEEN](https://www.w3schools.com/sql/sql_between.asp)
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## Logical Operators
+Used to combine or negate multiple conditions.
+
+| Operator| Description | Example |
+|-----------|-----------|-------|
+| `AND`   | Returns TRUE if both conditions are true. | `age > 18 AND city = 'NY'` |
+| `OR`   | Returns TRUE if any condition is true. | `age < 18 OR city = 'LA'` |
+| `NOT` | Negates the condition. | `NOT (status = 'Active')`  |
+| `BETWEEN`  | Checks range inclusively.  | `price BETWEEN 10 AND 50`  |
+| `IN`  | Checks if value exists in a list. | `country IN ('US','UK','CA')`  |
+| `EXISTS`  | TRUE if subquery returns any rows. | `WHERE EXISTS (SELECT * FROM Sales)`  |
+| `ALL`  | TRUE if all subquery results match condition. | `salary > ALL (SELECT avg(salary) FROM dept)`  |
+| `ANY` / `SOME`  | TRUE if any subquery result matches condition. | `salary > ANY (SELECT salary FROM dept)`  |
+
+## Operator Spotlight: AND / OR / NOT (Logic Order & Parentheses)
+Logical operators combine multiple conditions. SQL evaluates them in this order:
+1. `NOT`
+2. `AND`
+3. `OR`
+
+**Syntax & Example (Without Parentheses):**
+```sql
+-- Syntax
+SELECT *
+FROM Employees
+WHERE department = 'Sales' OR department = 'Finance' AND salary > 70000;
+
+-- Returns all Sales employees, and only Finance employees with salary > 70000 (AND has higher precedence than OR).
+```
+
+**Syntax & Example (With Parentheses):**
+```sql
+-- Syntax
+SELECT *
+FROM Employees
+WHERE (department = 'Sales' OR department = 'Finance')
+  AND salary > 70000;
+
+-- Returns both Sales and Finance employees, but only if salary > 70000.
+```
+
+**Notation**
+Always use parentheses `()` to make logic clear and avoid confusion especially in complex `WHERE` clauses.
+
+**Learn More:** [w3resource – Logical Operators](https://www.w3resource.com/sql/boolean-operator/sql-boolean-operators.php)
+                - [Mode SQL - Logical Operators](https://mode.com/sql-tutorial/sql-logical-operators)
+                - [W3Schools – IN](https://www.w3schools.com/sql/sql_in.asp)
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
+
+## String Operators
+Used for matching and concatenating text.
+
+| Operator| Description | Example |
+|-----------|-----------|-------|
+| `LIKE`   | Match patterns using wildcards. | `name LIKE 'A%' → names starting with A` |
+| `CONCAT()`  | Combine information from different columns. | `CONCAT(first, ' ', last)` |
+| `LOWER()` / `UPPER()`  | Converts text case for matching. | `LOWER(email)` |
+
+Full list is in the **Learn More** resources.
+
+## Operator Spotlight: LIKE & Wildcards
+`LIKE` operator allows pattern matching in text data using wildcards.
+
+| Wildcard | Description | Example |
+|-----------|-----------|-------|
+| `%`   | Any number of characters. | `'A%'` → Alice, Adam, Andrew |
+| `_`  | Exactly one character. | `'A_'` → Al, An, Ax |
+| `'%@gmail.com'`   | Ends with.... | any Gmail address |
+
+**Syntax & Example:**
+```sql
+-- Syntax
+SELECT name, email
+FROM Customers
+WHERE email LIKE '%@gmail.com';
+
+/* Explanation:
+% before @gmail.com allows any username.
+Useful for partial matches, flexible filtering, and searching unstructured text. */
+```
+**Notation**
+- Combine `LIKE` with `LOWER()` or `UPPER()` for case-insensitive searches.
+- PostgreSQL also supports `ILIKE` for case-insensitive matching directly.
+
+**Learn More:** [Datacamp – String Operators](https://www.datacamp.com/tutorial/sql-string-functions)
+                - [Geekforgeeks - String Operators](https://www.geeksforgeeks.org/sql/sql-string-functions/)
+                - [Coginiti - String Operators](https://www.coginiti.co/tutorials/intermediate/string-functions-in-sql/)
+                - [W3Schools – LIKE](https://www.w3schools.com/sql/sql_like.asp)
+                - [W3Schools – Wildcards](https://www.w3schools.com/sql/sql_wildcards.asp)
+
+<hr style="width:25%; border:1px solid #d3d3d3; margin-left:0;">
