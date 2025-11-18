@@ -411,3 +411,85 @@ JOIN Employee e
 GROUP BY p.project_id;
 
 Link to View Answer: (https://leetcode.com/problems/project-employees-i/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 018. Percentage of Users Attended Each Contest
+-- Question: Write a solution to find the percentage of the users registered in each contest rounded to two decimals.
+   Return the result table ordered by percentage in descending order. 
+   In case of a tie, order it by contest_id in ascending order.
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Count how many unique users registered for each contest.
+-- 2. Find the total number of users from the Users table.
+-- 3. Calculate the percentage as (registered_users / total_users) * 100
+-- 4. Round the result to 2 decimal places.
+-- 5. Order results by percentage (DESC) and contest_id (ASC).
+===================================================== */
+
+SELECT 
+    r.contest_id,
+    ROUND(COUNT(DISTINCT r.user_id) * 100.0 / (SELECT COUNT(*) FROM Users), 2) AS percentage
+FROM Register r
+GROUP BY r.contest_id
+ORDER BY percentage DESC, r.contest_id ASC;
+
+Link to View Answer: (https://leetcode.com/problems/percentage-of-users-attended-a-contest/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 019. Queries Quality and Percentage
+-- Question: Write a solution to find each query_name, the quality and poor_query_percentage.
+   Both quality and poor_query_percentage should be rounded to 2 decimal places.
+   Return the result table in any order.
+-- Difficulty: Easy
+-----------------------------------------------------
+-- Logic:
+-- 1. Use GROUP BY query_name to compute metrics per query.
+-- 2. Calculate quality using AVG(rating * 1.0 / position).
+-- 3. Calculate poor_query_percentage using a CASE statement inside AVG():
+      (a) Assign 1 to poor queries (rating < 3), else 0.
+      (b) Take AVG() to get the proportion of poor queries.
+      (c) Multiply by 100 for a percentage.
+-- 4. Use ROUND to make result 2 decimal places.
+===================================================== */
+
+SELECT 
+    query_name,
+    ROUND(AVG(rating * 1.0 / position), 2) AS quality,
+    ROUND(AVG(CASE WHEN rating < 3 THEN 1 ELSE 0 END) * 100.0, 2) AS poor_query_percentage
+FROM Queries
+WHERE query_name IS NOT NULL
+GROUP BY query_name;
+
+Link to View Answer: (https://leetcode.com/problems/queries-quality-and-percentage/description/?envType=study-plan-v2&envId=top-sql-50)
+
+/* =====================================================
+-- Problem: 020. Monthly Transactions I
+-- Question: Write an SQL query to find for each month and country
+   (i) the number of transactions and their total amount,
+   (ii) the number of approved transactions and their total amount.
+   Return the result table in any order.
+-- Difficulty: Medium
+-----------------------------------------------------
+-- Logic:
+-- 1. Use DATE_FORMAT() to extract 'YYYY-MM' month from trans_date.
+-- 2. Use COUNT(*) to get total transactions.
+-- 3. Use CASE stament with COUNT to get approved transactions.
+-- 4. Use SUM to get the total amount.
+-- 5. Use CASE stament with SUM to get approved amount.
+===================================================== */
+
+SELECT 
+    DATE_FORMAT(trans_date, '%Y-%m') AS month,
+    country,
+    COUNT(*) AS trans_count,
+    COUNT(CASE WHEN state = 'approved' THEN 1 END) AS approved_count,
+    SUM(amount) AS trans_total_amount,
+    SUM(CASE WHEN state = 'approved' THEN amount ELSE 0 END) AS approved_total_amount
+FROM Transactions
+GROUP BY month, country;
+
+Link to View Answer: (https://leetcode.com/problems/monthly-transactions-i/description/?envType=study-plan-v2&envId=top-sql-50)
+
+
+
