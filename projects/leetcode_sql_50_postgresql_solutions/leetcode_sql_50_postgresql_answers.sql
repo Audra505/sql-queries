@@ -491,5 +491,32 @@ GROUP BY month, country;
 
 Link to View Answer: (https://leetcode.com/problems/monthly-transactions-i/description/?envType=study-plan-v2&envId=top-sql-50)
 
+/* =====================================================
+-- Problem: 021. Immediate Food Delivery II
+-- Question: Write a solution to find the percentage of immediate orders in the first orders of all customers.
+   Rounded to 2 decimal places.
+-- Difficulty: Medium
+-----------------------------------------------------
+-- Logic:
+-- 1. Find each customer’s earliest order_date (first order).
+-- 2. Use SELF JOIN with the main table to retrieve full order details.
+-- 3. Use CASE to flag immediate orders (same-day delivery).
+-- 4. Compute percentage of immediate first orders: SUM(immediate_flag) / COUNT(*) * 100
+-- 5. Round to 2 decimal places.
+===================================================== */
+
+SELECT 
+    ROUND(SUM(CASE WHEN d.order_date = d.customer_pref_delivery_date THEN 1 ELSE 0 END) 
+          * 100.0 / COUNT(*), 2) AS immediate_percentage
+FROM Delivery d
+JOIN (
+    SELECT customer_id, MIN(order_date) AS first_order_date
+    FROM Delivery
+    GROUP BY customer_id
+) f
+ON d.customer_id = f.customer_id
+AND d.order_date = f.first_order_date;
+
+Link to View Answer: (https://leetcode.com/problems/immediate-food-delivery-ii/description/?envType=study-plan-v2&envId=top-sql-50)
 
 
