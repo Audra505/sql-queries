@@ -238,7 +238,7 @@ This Power dashboard visualizes the cleaned and analyzed data from PostgreSQL to
 - Boston and Lynn lead in chronic case density.
 - Seasonal spikes and gender/race variations reveal targeted healthcare demands.
 
-### View the Interactive Dashboard
+### Interactive Dashboard
 [Click to View Published Dashboard on Power BI](https://app.powerbi.com/view?r=eyJrIjoiMzg5ZjAyN2QtNzBmNS00MDM4LThlNTEtYjdiZDRjZDVmNmY5IiwidCI6ImY0ZTI5ODFhLWVlMjctNDhkZi05NDM1LWM0NmJiZDRmMWU3ZCJ9)  
 
 ---
