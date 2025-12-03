@@ -4,7 +4,7 @@ The report demonstrates **data storytelling**, **dynamic measures**, and **conte
 
 
 ## Live Report (Web View)
-[**View Published Dashboard on Power BI**](https://app.powerbi.com/view?r=eyJrIjoiOTE5ODdiNmItZjY4Mi00ZWY5LWE3MGUtNjE2ZTg4MzYwZTY2IiwidCI6ImY0ZTI5ODFhLWVlMjctNDhkZi05NDM1LWM0NmJiZDRmMWU3ZCJ9)  
+[**View Published Dashboard on Power BI**](https://app.powerbi.com/view?r=eyJrIjoiMzg5ZjAyN2QtNzBmNS00MDM4LThlNTEtYjdiZDRjZDVmNmY5IiwidCI6ImY0ZTI5ODFhLWVlMjctNDhkZi05NDM1LWM0NmJiZDRmMWU3ZCJ9)  
 
 
 ## Instructions
